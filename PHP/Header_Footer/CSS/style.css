@@ -38,8 +38,12 @@ nav {
   margin-left: 68%;
 }
 .headLogo {
-  margin-left: 35%;
+  margin-left: 45%;
   margin-right: 10%;
+}
+
+.welcome-text {
+  margin-left: 30px;
 }
 
 /* ESPACE MAIN */
@@ -54,6 +58,10 @@ main {
   justify-content: center;
 }
 
+.title {
+  text-align: left;
+}
+
 .box-container h1 {
   width: 200px;
 }
@@ -63,7 +71,7 @@ main {
   grid-template-columns: repeat(2, auto);
   grid-template-rows: auto;
   margin-top: 30px;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .card-produit {
@@ -77,12 +85,8 @@ main {
   padding-bottom: 10px;
 }
 
-.margin-right {
-  margin-right: 30px;
-}
-
-.margin-left {
-  margin-left: 30px;
+img {
+  width: 350px;
 }
 /* PAGE LOGIN */
 /* .box-container {
@@ -419,7 +423,7 @@ footer {
 }
 
 /* form btns*/
-.btn-submit {
+/* .btn-submit {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -498,8 +502,7 @@ footer {
   color: hsl(207, 70%, 15%);
   margin-left: 2px;
 }
-
-.contour {
+*/ .contour {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
