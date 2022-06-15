@@ -17,6 +17,7 @@ $_SESSION["prenom_nom"];
 <html>
 <head>
 <meta  charset="utf-8"  />
+<title>Testtt</title>
 <link rel="stylesheet" href="../../CSS/style.css">
 <style>
 * {
@@ -67,7 +68,7 @@ foreach ($produits as $produit) {
             echo '<div id="product-'.$produit['PRD_ID'].'" class="container-product">';
             echo '<h3 class="card-title">'. $produit['PRD_DESCRIPTION'].' </h3>';
             echo '<p class="prix">'.$produit['PRD_PRICE'].'€</p>';
-            echo '<input type="submit" id="submit-product-'.$produit['PRD_ID'].'" name="submit" value=" + Plus d\'infos"/>';
+            echo '<input type="submit" id="submit-product-'.$produit['PRD_ID'].'" name="submit" value="Ajouter au Panier" action="/>';
             echo '</div>';
             echo '</div>';
             echo '</form>'."\n";
