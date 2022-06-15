@@ -6,13 +6,12 @@ include("infos.php");
 $erreur = "";
 if (isset($valider)) {
 include("connexion.php");
-$verify = $pdo->prepare("select * from t_d_user_usr where username=? and USR_PASSWORD=? limit 1");
+$verify = $pdo->prepare("select * from users where pseudo=? and password=? limit 1");
 $verify->execute(array($pseudo, $pass_crypt));
 $user = $verify->fetchAll();
 if (count($user) > 0) {
-$_SESSION["prenom_nom"] = $pseudo;
-// ucfirst(strtolower($user[0]["prenom"])) .
-// " "  .  strtoupper($user[0]["nom"]);
+$_SESSION["prenom_nom"] = ucfirst(strtolower($user[0]["prenom"])) .
+" "  .  strtoupper($user[0]["nom"]);
 $_SESSION["connecter"] = "yes";
 header("location:session.php");
 } else

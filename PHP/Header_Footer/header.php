@@ -1,15 +1,15 @@
 
 <header>
         <nav>
-            <h3><?php echo "Utilisateur : Test"; ?> </h3>
-            <a href="index.php">Accueil</a>
-            <?php echo '<form id="deco" method="post" action="">';
-            echo '<input type="submit" id="deco" name="deco" value="Déconnexion"/>';
-            echo '</form>';
-            ?>
+            <h3 class="titre-header"><?php echo 'Utilisateur : <span class="rouge">'.$_SESSION["prenom_nom"].'</span>'; ?> </h3>
+            <a href="session.php">Accueil</a>
+            <a  href="deconnexion.php">Se déconnecter</a>
+            
+            
+            
            
            
            
-            <img class="logo headLogo" src="img\MenuizMan_logo.png" alt="logo">
+            <img class="logo headLogo" src="../../img\MenuizMan_logo.png" alt="logo">
         </nav>
 </header>

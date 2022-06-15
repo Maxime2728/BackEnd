@@ -60,6 +60,7 @@ main {
 
 .title {
   text-align: left;
+  margin-left: -5px;
 }
 
 .box-container h1 {
@@ -88,93 +89,13 @@ main {
 img {
   width: 350px;
 }
+
+.rouge {
+  color: rgb(184, 49, 211);
+  font-weight: bolder;
+}
 /* PAGE LOGIN */
-/* .box-container {
-  display: flex;
-  justify-content: space-around;
-  padding: 2%;
-  width: 95%;
-  height: auto;
-} */
-/*
-.login-box {
-    display: flex;
-    justify-content: space-around;
-    align-self: center;
-}
-.form-box {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-}
-.login-fieldset {
-    border: 2px #5292e6cb ridge;
-    display: flex;
-    flex-direction: column;
-    padding: 5%;
-}
-.login-legend, 
-.form-legend { 
-    color: #5292e6cb;
-    margin: 2%;
-    padding: 2%;
-} */
-/* login btns */
-/* .btn-login{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    width: 10vw;
-    padding: 10px;
-    background: #387fdbcb;
-    border-radius: 5%;
-    border-style: none;
-    border: 0px 5px 5px 0px #5292e6cb solid;
-    
-}
-.btn-login:hover{
-background: #8fbdf8cb;
-}
-.btn-login:active{
-background: #ffffffd0;
-}
-.input-login{
-    background: #8fbdf8cb;
-    height: 3em;
-    margin: 5px;
-    border:2px #5292e6cb solid;
-    padding: 5px;
-    letter-spacing: 1px;
-}
-.input-login:active{
-    background: #387fdbcb;
-}
-.login-label{
-    color: #387fdbcb;
-    margin-left: 3px;
-    letter-spacing: 2px;
-}
 
-.contact-admin{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-end;
-    width: 10vw;
-    padding: 10px;
-    background: #387fdbcb;
-    border-radius: 5%; */
-/* border-style: none; */
-/* border: 0px 5px 5px 0px hsl(210, 40%, 2%) solid;
-
-} */
-/* .contact-admin:hover{
-    background: #90b4e2cb;
-}
-.contact-admin:active{
-    background: #ffffffcb;
-} */
 /* PAGE CREATE */
 /* CREATE FLORENT*/
 /* .technicienHOTLINE {

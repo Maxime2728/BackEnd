@@ -11,33 +11,34 @@
  <?php
  // HEADER
  include "header.php";
+ include "Fonction PHP/Connexion-Deco/config.php";
 
-  session_start();
-    if ((!isset($_SESSION['login'])) || (empty($_SESSION['login']))) 
-    {
-    // la variable 'login' de session est non déclarée ou vide
-    echo ' <p>Petit curieux... <a href="Fonction PHP/Connexion-Deco/login.php" title"Connexion">Faut se connecter mon gars ! ('.$_SESSION['login'].')</a></p>'."\n";
-    exit();
-    }
-    else{
-            
-        echo '<p style="color:#FF0000; font-weight:bold;" class="welcome-text">Bienvenue '.$_SESSION['login'].'.</p>';
-
+ session_start();
+ // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
+ if(!isset($_SESSION["username"])){
+   header("Location: Fonction PHP/Connexion-Deco/login.php");
+   exit(); 
+ }
+ ?>
+ <div class="sucess">
+ <h1>Bienvenue <?php echo $_SESSION['username']; ?>!</h1>
+ <!-- <p>C'est votre tableau de bord.</p> -->
+ <a href="Fonction PHP/Connexion-Deco/logout.php">Déconnexion</a>
+ </div>
+ <?php
         echo "<main>";
-
-
-
-    $mysqlConnection = new PDO('mysql:host=localhost;dbname=menuiz-jo;charset=utf8', 'root', '');
-    $produitStatement = $mysqlConnection->prepare('SELECT * FROM T_D_PRODUCT_PRD');
-
-    $produitStatement->execute();
-    $produits = $produitStatement->fetchAll();
 
     echo '<div id="product-box" class="box-container">';
     echo '<h1 class="title"> Nos produits : </h1><br>';
     // echo '<div class="center"';
     echo '<div class="container-card">';
     
+    $mysqlConnection = new PDO('mysql:host=localhost;dbname=menuiz-jo;charset=utf8', 'root', '');
+    $produitStatement = $mysqlConnection->prepare('SELECT * FROM T_D_PRODUCT_PRD');
+
+    $produitStatement->execute();
+    $produits = $produitStatement->fetchAll();
+
     // On affiche chaque produit un à un
     foreach ($produits as $produit) {
             //  <p><?php echo $produit['PRD_DESCRIPTION']; </p> 
@@ -101,7 +102,6 @@
    
 
     echo "</main>";
-        };
     
     // FOOTER
      include "footer.php";

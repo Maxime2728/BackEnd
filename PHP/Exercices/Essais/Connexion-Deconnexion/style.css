@@ -1,5 +1,5 @@
 body {
-  background: #1c242d;
+  background: #ffffff;
 }
 .box {
   border: 1px solid #c4c4c4;
@@ -59,7 +59,7 @@ h1.box-title {
 }
 .sucess {
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .sucess a {
   text-decoration: none;
