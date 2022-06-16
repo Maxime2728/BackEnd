@@ -94,6 +94,17 @@ img {
   color: rgb(184, 49, 211);
   font-weight: bolder;
 }
+
+.panier {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.bienvenue {
+  margin-top: 20px;
+  color: rebeccapurple;
+}
 /* PAGE LOGIN */
 
 /* PAGE CREATE */

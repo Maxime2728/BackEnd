@@ -4,10 +4,11 @@ include("infos.php");
 @$valider = $_POST["inscrire"];
 $erreur = "";
 if (isset($valider)) {
-if (empty($nom)) $erreur = "Le chanmps nom est obligatoire !";
-elseif (empty($prenom)) $erreur = "Le chanmps prénom est obligatoire !";
-elseif (empty($pseudo)) $erreur = "Le chanmps Pseudo est obligatoire !";
-elseif (empty($password)) $erreur = "Le chanmps mot de passe est obligatoire !";
+if (empty($nom)) $erreur = "Le champs nom est obligatoire !";
+elseif (empty($prenom)) $erreur = "Le champs prénom est obligatoire !";
+elseif (empty($pseudo)) $erreur = "Le champs Pseudo est obligatoire !";
+elseif(empty($email)) $erreur = "Le champs Email est obligatoire !";
+elseif (empty($password)) $erreur = "Le champs mot de passe est obligatoire !";
 elseif ($password != $passwordConf) $erreur = "Mots de passe differents !";
 else {
 include("connexion.php");

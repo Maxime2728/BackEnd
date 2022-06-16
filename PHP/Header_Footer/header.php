@@ -10,6 +10,6 @@
            
            
            
-            <img class="logo headLogo" src="../../img\MenuizMan_logo.png" alt="logo">
+            <img class="logo headLogo" src="img\MenuizMan_logo.png" alt="logo">
         </nav>
 </header>
