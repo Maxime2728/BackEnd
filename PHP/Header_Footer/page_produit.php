@@ -31,6 +31,8 @@ $_SESSION["prenom_nom"];
 
  include "header.php";
 
+ include "panier.php";
+
  echo '<div class="zone-produits">';
 
 
@@ -49,7 +51,7 @@ $produit = $produitStatement->fetchAll();
     echo '<p class="description">'.$produit[0]['PRD_DEFINITION'].'</p>';
     echo '<h2 class="prix">'.$produit[0]['PRD_PRICE'].' </h2>';
 
-    echo '<a href="panier.php?action=ajout&amp;l='.$produit[0]['PRD_DESCRIPTION'].'&amp;q=QUANTITEPRODUIT&amp;p=PRD_PRICE" onclick="window.open(this.href, \'\', 
+    echo '<a href="panier.php?action=ajout&amp;l='.$produit[0]['PRD_DESCRIPTION'].'&amp;q=1&amp;p='.$produit[0]['PRD_PRICE'].'" onclick="window.open(this.href, \'\', 
 \'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350\'); return false;"  class="add-to-cart btn btn-primary">Ajouter au panier</a>';
     echo '</div>';
 

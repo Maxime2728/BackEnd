@@ -21,8 +21,8 @@ foreach ($produits as $produit) {
     echo '</a></div> ';
     echo '<p class="titre">'.$produit['PRD_DESCRIPTION'].'</p>';
     echo '<p class="prix">'.$produit['PRD_PRICE'].' </p>';
-    echo '<a href="panier.php?action=ajout&amp;l=LIBELLEPRODUIT&amp;q=QUANTITEPRODUIT&amp;p=PRIXPRODUIT" onclick="window.open(this.href, \'\', 
-\'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350\'); return false;"  class="add-to-cart btn btn-primary">Ajouter au panier</a>';
+    echo '<a href="panier.php?action=ajout&amp;l='.$produit['PRD_DESCRIPTION'].'&amp;q=1&amp;p='.$produit['PRD_PRICE'].'" onclick="window.open(this.href, \'\', 
+    \'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350\'); return false;"  class="add-to-cart btn btn-primary">Ajouter au panier</a>';
     echo '</div>';
     echo '</div>';
     echo '</form>';

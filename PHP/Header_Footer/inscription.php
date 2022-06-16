@@ -17,6 +17,15 @@ $verify_pseudo->execute(array($pseudo));
 $user_pseudo = $verify_pseudo->fetchAll();
 if (count($user_pseudo) > 0)
 $erreur = "Pseudo existe déjà!";
+
+
+/* Vérifier si l'e-mail est déjà dans la base de données. */
+$verify_email = $pdo->prepare("select USR_ID from t_d_user_usr where USR_MAIL=? limit 1");
+$verify_email->execute(array($email));
+$user_email = $verify_email->fetchAll();
+if (count($user_email) > 0)
+$erreur = "Email déjà existante !";
+
 else {
 $ins = $pdo->prepare("insert into t_d_user_usr(USR_LASTNAME,USR_FIRSTNAME,username,USR_PASSWORD, USR_MAIL) values(?,?,?,?,?)");
 if ($ins->execute(array($nom, $prenom, $pseudo, md5($password), $email)))

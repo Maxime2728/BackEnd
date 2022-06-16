@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)){
+   session_start();
+}
 
 include_once("fonctions-panier.php");
 
@@ -100,10 +103,12 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
           echo "</td></tr>";
 
           echo "<tr><td colspan=\"4\">";
-          echo "<input type=\"submit\" value=\"Rafraichir\"/>";
+          echo "<input type=\"submit\" value=\"Modifier\"/>";
           echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
-
           echo "</td></tr>";
+
+          echo "<a href='session.php'>Retour Accueil</a>";
+
        }
     }
     ?>
