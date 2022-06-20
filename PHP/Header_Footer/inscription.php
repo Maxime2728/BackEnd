@@ -28,7 +28,7 @@ $erreur = "Email déjà existante !";
 
 else {
 $ins = $pdo->prepare("insert into t_d_user_usr(USR_LASTNAME,USR_FIRSTNAME,username,USR_PASSWORD, USR_MAIL) values(?,?,?,?,?)");
-if ($ins->execute(array($nom, $prenom, $pseudo, md5($password), $email)))
+if ($ins->execute(array($nom, $prenom, $pseudo, sha1($password), $email)))
 header("location:login.php");
      }
    }
@@ -56,10 +56,10 @@ margin-top: -100px;
 h1 {
 text-align: center;
 color: #FFFAFA;
-background: gray;
+background: blue;
 }
 input[type=submit] {
-border: solid  1px  violet;
+border: solid  1px  blue;
 margin-bottom: 10px;
 float: right;
 padding: 15px;
@@ -69,18 +69,26 @@ width: 120px;
 }
 input[type=text],
 [type=password],[type=email] {
-border: solid  1px  violet;
+border: solid  1px  blue;
 margin-bottom: 10px;
 padding: 16px;
 outline: none;
 border-radius: 7px;
 width: 300px;
 }
+.div-erreur{
+  display: flex;
+  justify-content: center;
+}
 .erreur {
 text-align: center;
-color: red;
+color: white;
 margin-top: 10px;
- 
+background-color: red;
+width: 50%;
+height: 30px;
+font-size: 25px;
+border-radius: 10px;
 }
 a {
 font-size: 14pt;
@@ -95,7 +103,9 @@ text-decoration: underline;
 </head>
 <body>
 <h1>Inscription</h1>
+<div class="div-erreur">
 <div  class="erreur"><?php  echo  $erreur  ?></div>
+</div>
 <form  name="fo"  method="post"  action="">
 <input  type="text"  name="nom"  placeholder="Nom"  value="<?=  $nom  ?>"  /><br  />
 <input  type="text"  name="prenom"  placeholder="Prénom"  value="<?=  $prenom  ?>"  /><br  />

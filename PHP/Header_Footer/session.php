@@ -7,12 +7,12 @@ if ($_SESSION["connecter"] != "yes") {
 header("location:login.php");
 exit();
 }
-if (date("H") < 18)
-$bienvenue = "Bonjour et bienvenue "  .
-$_SESSION["prenom_nom"];
-else
-$bienvenue = "Bonsoir et bienvenue "  .
-$_SESSION["prenom_nom"];
+// if (date("H") < 18)
+// $bienvenue = "Bonjour et bienvenue <span class='bonjour'>"  .
+// $_SESSION["prenom_nom"]. "</span>";
+// else
+// $bienvenue = "Bonsoir et bienvenue "  .
+// $_SESSION["prenom_nom"];
 ?>
  
 <!DOCTYPE  html>
@@ -43,11 +43,11 @@ text-decoration: underline;
  
 </style>
 </head>
-<body  onLoad="document.fo.login.focus()">
+<body>
 <?php include "header.php";?>
 
 <div class="panier"><?php include"panier.php";?></div>
-<h2 class="bienvenue"><?php  echo  $bienvenue  ?></h2>
+<h2 class="bienvenue"><?php   ?></h2>
 <?php
 
  $mysqlConnection = new PDO('mysql:host=localhost;dbname=menuiz-jo;charset=utf8', 'root', '');

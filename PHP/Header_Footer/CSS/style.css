@@ -9,6 +9,10 @@ h1 {
   margin: 1% 3%;
   font-size: 28px;
 }
+
+.bonjour {
+  color: red;
+}
 /* HEADER */
 a {
   text-decoration: none;
@@ -104,6 +108,19 @@ img {
 .bienvenue {
   margin-top: 20px;
   color: rebeccapurple;
+}
+
+/*BOUTONS*/
+.btn {
+  margin-top: 20px;
+  background-color: #5292e6cb;
+  font-size: 20px;
+  border-radius: 20px;
+  width: 200px;
+  height: 25px;
+  text-align: center;
+  padding: 0;
+  /* margin: 0; */
 }
 /* PAGE LOGIN */
 

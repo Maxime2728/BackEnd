@@ -83,16 +83,18 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
     if (creationPanier())
     {
        $nbArticles=count($_SESSION['panier']['libelleProduit']);
-       if ($nbArticles <= 0)
+       if ($nbArticles <= 0){
        echo "<tr><td>Votre panier est vide </ td></tr>";
-       else
-       {
+       echo "<a href='session.php' class='btn'>Retour Accueil</a>";
+       }
+       else{
           for ($i=0 ;$i < $nbArticles ; $i++)
           {
              echo "<tr>";
              echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
              echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".htmlspecialchars($_SESSION['panier']['qteProduit'][$i])."\"/></td>";
-             echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."</td>";
+             echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."€</td>";
+            //  echo "<td>".htmlspecialchars($_SESSION['"
              echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">Supprimer</a></td>";
              echo "</tr>";
           }
@@ -100,14 +102,14 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
           echo "<tr><td colspan=\"2\"> </td>";
           echo "<td colspan=\"2\">";
           echo "Total : ".MontantGlobal();
-          echo "</td></tr>";
+          echo "€</td></tr>";
 
           echo "<tr><td colspan=\"4\">";
           echo "<input type=\"submit\" value=\"Modifier\"/>";
           echo "<input type=\"hidden\" name=\"action\" value=\"refresh\"/>";
           echo "</td></tr>";
 
-          echo "<a href='session.php'>Retour Accueil</a>";
+          echo "<a href='session.php' class='btn'>Retour Accueil</a>";
 
        }
     }

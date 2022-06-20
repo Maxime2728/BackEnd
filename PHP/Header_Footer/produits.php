@@ -1,8 +1,9 @@
 <?php
-include "functions.php";
+include "ModelProduct.php";
 $produitModel=new ModeleProduct(0);
 $produitStatement=$produitModel->lireProduits();
 $produits = $produitStatement->fetchAll();
+
 
 echo '<div id="product-box" class="box-container">';
 echo '<div class="container-card">';
@@ -18,9 +19,10 @@ foreach ($produits as $produit) {
     echo '<div name ="idProduit" id="produit'.$produit['PRD_ID'].'" class="produits">';
     echo '<div class ="container-image">';
     echo '<a href="page_produit.php?idProduit='.$produit['PRD_ID'].'"><img src="'.$produit['PRD_PICTURE'].'"/>';
-    echo '</a></div> ';
+    echo '</a></div>';
     echo '<p class="titre">'.$produit['PRD_DESCRIPTION'].'</p>';
-    echo '<p class="prix">'.$produit['PRD_PRICE'].' </p>';
+    echo '<p class="prix">'.$produit['PRD_PRICE'].'€ </p>';
+    echo '<p class="type-prd">'.$produit['PTY_DESCRIPTION'].'</p>';
     echo '<a href="panier.php?action=ajout&amp;l='.$produit['PRD_DESCRIPTION'].'&amp;q=1&amp;p='.$produit['PRD_PRICE'].'" onclick="window.open(this.href, \'\', 
     \'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350\'); return false;"  class="add-to-cart btn btn-primary">Ajouter au panier</a>';
     echo '</div>';
