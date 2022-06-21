@@ -2,20 +2,15 @@
  
 session_start();
 include("infos.php");
-include("ModelUser.php");
 @$valider = $_POST["valider"];
 $erreur = "";
 if (isset($valider)) {
-    $userMail = new ModeleUser(0);
-    $userPass=new ModeleUser(0);
-    $userPseudo=new ModeleUser(0);
-$utilisateur = $userMail->RecupUserByMail($email)->fetchAll();
-$password = $userPass->RecupPassword($password, $email)->fetchAll();
-$pseudo1 = $userPseudo->RecupPseudo($email)->fetchAll()[0]['username'];
-        
-// s'il ya un utilisateur en bdd avec l'email saisi
-if (!empty($utilisateur[0]) && !empty($password[0])){
-$_SESSION["prenom_nom"] = $pseudo1;
+include("connexion.php");
+$verify = $pdo->prepare("select * from t_d_user_usr where username=? and USR_PASSWORD=? limit 1");
+$verify->execute(array($pseudo, $pass_crypt));
+$user = $verify->fetchAll();
+if (count($user) > 0) {
+$_SESSION["prenom_nom"] = $pseudo;
 // ucfirst(strtolower($user[0]["prenom"])) .
 // " "  .  strtoupper($user[0]["nom"]);
 $_SESSION["connecter"] = "yes";
@@ -47,11 +42,11 @@ margin-top: -100px;
 h1 {
 text-align: center;
 color: #FFFAFA;
-background: blue;
+background: gray;
 }
  
 input[type=submit] {
-border: solid  1px  blue;
+border: solid  1px  violet;
 margin-bottom: 10px;
 float: right;
 padding: 15px;
@@ -59,9 +54,9 @@ outline: none;
 border-radius: 7px;
 width: 120px;
 }
-input[type=email],
+input[type=text],
 [type=password] {
-border: solid  1px  blue;
+border: solid  1px  violet;
 margin-bottom: 10px;
 padding: 16px;
 outline: none;
@@ -85,11 +80,11 @@ text-decoration: underline;
 }
 </style>
 </head>
-<body>
+<body  onLoad="document.fo.login.focus()">
 <h1>Authentification</h1>
 <div  class="erreur"><?php  echo  $erreur  ?></div>
 <form  name="form"  method="post"  action="">
-<input  type="email"  name="email"  placeholder="Votre Email"  /><br  />
+<input  type="text"  name="pseudo"  placeholder="Votre Pseudo"  /><br  />
 <input  type="password"  name="password"  placeholder="Mot de passe"  /><br  />
 <input  type="submit"  name="valider"  value="S'authentifier"  />
 <a  href="inscription.php">Créer votre Compte</a>

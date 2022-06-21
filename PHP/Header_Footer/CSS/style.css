@@ -107,7 +107,7 @@ img {
 
 .bienvenue {
   margin-top: 20px;
-  color: rebeccapurple;
+  color: rgb(50, 124, 194);
 }
 
 /*BOUTONS*/
@@ -121,6 +121,14 @@ img {
   text-align: center;
   padding: 0;
   /* margin: 0; */
+}
+
+.centrer-form {
+  margin-bottom: 30px !important;
+}
+
+.grid-signin-1 {
+  /* display: flex; */
 }
 /* PAGE LOGIN */
 
