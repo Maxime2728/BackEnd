@@ -1,5 +1,5 @@
 <?php
-include "ModelProduct.php";
+include "Model/ModelProduct.php";
 $produitModel=new ModeleProduct(0);
 $produitStatement=$produitModel->lireProduits();
 $produits = $produitStatement->fetchAll();
@@ -23,8 +23,7 @@ foreach ($produits as $produit) {
     echo '<p class="titre">'.$produit['PRD_DESCRIPTION'].'</p>';
     echo '<p class="prix">'.$produit['PRD_PRICE'].'€ </p>';
     echo '<p class="type-prd">'.$produit['PTY_DESCRIPTION'].'</p>';
-    echo '<a href="panier.php?action=ajout&amp;l='.$produit['PRD_DESCRIPTION'].'&amp;q=1&amp;p='.$produit['PRD_PRICE'].'" onclick="window.open(this.href, \'\', 
-    \'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350\'); return false;"  class="add-to-cart btn btn-primary">Ajouter au panier</a>';
+    echo '<a href="panier.php?action=ajout&amp;l='.$produit['PRD_DESCRIPTION'].'&amp;q=1&amp;p='.$produit['PRD_PRICE'].'"; onclick="window.open(this.href, \'\', \'toolbar=no, location=no, directories=no, status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=600, height=350\'); onclick="header("Refresh:0"; url="session.php"); url=page2.php");return false;"  class="add-to-cart btn btn-primary">Ajouter au panier</a>';
     echo '</div>';
     echo '</div>';
     echo '</form>';

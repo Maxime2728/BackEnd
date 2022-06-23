@@ -52,13 +52,15 @@ text-decoration: underline;
 </h2>
 <?php
 
- $mysqlConnection = new PDO('mysql:host=localhost;dbname=menuiz-jo;charset=utf8', 'root', '');
- $produitStatement = $mysqlConnection->prepare('SELECT * FROM T_D_PRODUCT_PRD');
+//  $mysqlConnection = new PDO('mysql:host=localhost;dbname=menuiz-jo;charset=utf8', 'root', '');
+//  $produitStatement = $mysqlConnection->prepare('SELECT * FROM T_D_PRODUCT_PRD');
 
- $produitStatement->execute();
- $produits = $produitStatement->fetchAll();
+//  $produitStatement->execute();
+//  $produits = $produitStatement->fetchAll();
 
  include"produits.php";
+
+
 
     include"footer.php"?>
 </body>
