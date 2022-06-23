@@ -5,11 +5,15 @@ include("ModelAdresse.php");
 @$valider = $_POST["inscrire"];
 $erreur = "";
 if (isset($valider)) {
-if (empty($lastname)) $erreur = "Le champs nom est obligatoire !";
-elseif (empty($firstname)) $erreur = "Le champs prénom est obligatoire !";
+if (empty($lastname)) $erreur = "Le champs Nom est obligatoire !";
+elseif (empty($firstname)) $erreur = "Le champs Prénom est obligatoire !";
 elseif (empty($pseudo)) $erreur = "Le champs Pseudo est obligatoire !";
 elseif(empty($email)) $erreur = "Le champs Email est obligatoire !";
-elseif (empty($password)) $erreur = "Le champs mot de passe est obligatoire !";
+elseif (empty($password)) $erreur = "Le champs Mot De Passe est obligatoire !";
+elseif (empty($line1)) $erreur = "Le champs Adresse est obligatoire !";
+elseif (empty($zipcode)) $erreur = "Le champs Code Postal est obligatoire !";
+elseif (empty($city)) $erreur = "Le champs Ville est obligatoire !";
+elseif (empty($country)) $erreur = "Le champs Pays est obligatoire !";
 elseif ($password != $passwordConf) $erreur = "Mots de passe differents !";
 else {
 include("connexion.php");
@@ -121,13 +125,13 @@ text-decoration: underline;
 <input  type="email" name="email" placeholder="Votre adresse mail" value="<?= $email ?>"/> <br>
 <input  type="password"  name="password"  placeholder="Mot de passe"  /><br  />
 <input  type="password"  name="passconf"  placeholder="Confirmer votre Mot de passe"  /><br  />
-<input  type="text" name="line1" placeholder="Votre adresse 1ere Ligne" /><br/>
-<input  type="text" name="line2" placeholder="Votre adresse 2eme Ligne" /><br/>
-<input  type="text" name="line3" placeholder="Votre adresse 3eme Ligne" /><br/>
-<input type="number" name="zipcode" placeholder="Votre Code Postale"/><br/>
-<input type="text" name="city" placeholder="Votre Ville"/><br/>
-<input type="text" name="country" placeholder="Votre Pays"/><br/>
-<input type="tel" name="phone" placeholder="Votre numéro de téléphone"/><br/>
+<input  type="text" name="line1" placeholder="Votre adresse 1ere Ligne" value="<?=  $line1  ?>"/><br/>
+<input  type="text" name="line2" placeholder="Votre adresse 2eme Ligne" value="<?=  $line2  ?>"/><br/>
+<input  type="text" name="line3" placeholder="Votre adresse 3eme Ligne" value="<?=  $line3  ?>"/><br/>
+<input type="number" name="zipcode" placeholder="Votre Code Postale" value="<?=  $zipcode  ?>"/><br/>
+<input type="text" name="city" placeholder="Votre Ville" value="<?=  $city  ?>"/><br/>
+<input type="text" name="country" placeholder="Votre Pays" value="<?=  $country  ?>"/><br/>
+<input type="tel" name="phone" placeholder="Votre numéro de téléphone" value="<?=  $phone  ?>"/><br/>
 
 
 <input  type="submit"  name="inscrire"  value="S'inscrire"  />

@@ -15,4 +15,5 @@
 @$country = $_POST["country"];
 @$email = $_POST["email"];
 @$phone = $_POST["phone"];
+@$type = $_POST["type"];
 ?>
