@@ -26,7 +26,7 @@ require __DIR__ . '/layout/top.php';
 
 <div class="row">
     <div class="col-md-4 text-center">
-        <img height="200px" src="<?= $src; ?>">
+        <img width="200px" src="<?= $src; ?>">
         <p><?= prixFr($produit['PRD_PRICE']); ?></p>
         <form method="post" class="form-inline">
             <label>Qté</label>

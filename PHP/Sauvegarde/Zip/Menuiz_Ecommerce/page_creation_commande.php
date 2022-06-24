@@ -197,7 +197,7 @@ require __DIR__ . '/layout/top.php';
                 <option value="<?= $adr['ADR_ID']; ?>"><?= $adr['completadress']; ?></option>
             <?php
             endforeach;
-            if (isset($_SESSION['adresseFac'])) {
+            if (isset($_SESSION['adresseFac']['completadress'])) {
             ?>
                 <option value="0" <?= 'selected'; ?>><?= $_SESSION['adresseFac']['completadress']; ?></option>
             <?php
@@ -221,7 +221,7 @@ require __DIR__ . '/layout/top.php';
             <?php
             endforeach;
 
-            if (isset($_SESSION['adresseLiv'])) {
+            if (isset($_SESSION['adresseLiv']['completadress'])) {
             ?>
                 <option value="0" <?= 'selected'; ?>><?= $_SESSION['adresseLiv']['completadress']; ?></option>
             <?php

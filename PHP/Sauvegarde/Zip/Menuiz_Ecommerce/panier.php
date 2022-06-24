@@ -5,6 +5,7 @@ require __DIR__ .'/Model/ProduitModel.php';
 $Total = 0;
 $Quantite = 0;
 
+
 if (isset($_GET['action'])) {
 
     if ($_GET['action'] == 'ajout') {
@@ -14,6 +15,8 @@ if (isset($_GET['action'])) {
         $produits = $produitStatement->fetchAll();
 
         ajouterPanier($produits[0], $_GET['quantite']);
+        header('Location: panier.php');
+        die;
     }
 }
 
@@ -55,7 +58,7 @@ if (isset($_POST['commander'])) {
 
 
 if (isset($_POST['modifierQuantite'])) {
-    modifierQuantitePanier($_GET['id_produit'], $_POST['quantite']);
+    modifierQuantitePanier($_POST['id_produit'], $_POST['quantite']);
 }
 
 

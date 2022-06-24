@@ -6,7 +6,7 @@ class ModeleUser
     private function connexion()
     {
 
-        $this->idc = new PDO("mysql:host=localhost;  dbname=menuiz-jo", 'root', '');
+        $this->idc = new PDO("mysql:host=localhost;  dbname=menuiz", 'root', '');
     }
 
     //Fonction pour afficher un user par rapport à son identifiant
@@ -57,7 +57,8 @@ on USR.UTY_ID=UTY.UTY_ID
             :email,
             :mdp,
             :nom,
-            :prenom  ,5 
+            :prenom,
+            1
         )'; //par défaut on le met en type utilisateur visiteur
 
         $stmt = $this->idc->prepare($query);

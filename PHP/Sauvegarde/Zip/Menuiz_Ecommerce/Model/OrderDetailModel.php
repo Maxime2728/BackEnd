@@ -6,7 +6,7 @@ class ModeleOrderDetail
     private function connexion()
     {
 
-        $this->idc = new PDO("mysql:host=localhost;  dbname=menuiz-jo", 'root', '');
+        $this->idc = new PDO("mysql:host=localhost;  dbname=menuiz", 'root', '');
     }
 
     //Fonction pour afficher un détail de commande par rapport à l'identifiant

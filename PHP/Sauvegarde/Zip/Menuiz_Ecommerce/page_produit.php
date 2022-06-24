@@ -3,7 +3,7 @@ require_once __DIR__ . '/Include/init.php';
 
 require __DIR__ . '/layout/top.php';
 ?>
-
+<link rel="stylesheet" href="CSS/style.css">
 <body>
     <?php
     echo '<div class="zone-produits">';

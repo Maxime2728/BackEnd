@@ -1,6 +1,6 @@
 <?php
 $pdo = new PDO(
-    'mysql:host=localhost;dbname=menuiz-jo', // chaîne de connexion
+    'mysql:host=localhost;dbname=menuiz', // chaîne de connexion
     'root', // utilisateur
     '', // mot de passe
     // tableau d'options

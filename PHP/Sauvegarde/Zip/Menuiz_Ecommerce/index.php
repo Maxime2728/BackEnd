@@ -18,8 +18,12 @@ echo '<div class="container-card">';
 require __DIR__ .'/Model/ProduitModel.php';
 $produitModel = new ModeleProduct(0);
 $produitStatement = $produitModel->lireProduits();
-$produits = $produitStatement->fetchAll();
+$produits = $produitStatement->fetchAll();?>
 
+
+<link rel="stylesheet" href="CSS/style.css">
+
+<?php 
 // On affiche chaque produit un à un
 foreach ($produits as $produit) {
        $image;
