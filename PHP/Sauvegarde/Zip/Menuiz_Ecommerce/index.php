@@ -32,7 +32,6 @@ foreach ($produits as $produit) {
        } else {
               $image = $produit['PRD_PICTURE'];
        }
-
        echo '<form action="page_produit.php" method="GET">';
        echo '<div name="idProduit" id="produit' . $produit['PRD_ID'] . '" 
        class="card-produit card-' . $produit['PRD_ID'] . '">';

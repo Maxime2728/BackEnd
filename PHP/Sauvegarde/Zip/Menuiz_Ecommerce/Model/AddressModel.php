@@ -124,7 +124,8 @@ class ModeleAddress
             :firstname,
             :lastname,
             :line1,
-            :line2  ,:line3,
+            :line2 ,
+            :line3,
             :zipcode,
             :city,
             :country ,
@@ -147,7 +148,7 @@ class ModeleAddress
         ]);
 
         // on retourne le dernier id
-        return $id = $this->idc->lastInsertId();;
+        return $id = $this->idc->lastInsertId();
     }
 
   

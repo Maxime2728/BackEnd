@@ -59,6 +59,11 @@ require __DIR__ .'/layout/top.php';
 
 if (!empty($errors)) :
 ?>
+<style>
+form{
+    width: 400px !important;
+}
+</style>
 <div class="alert alert-danger">
     <h5 class="alert-heading">Le formulaire contient des erreurs</h5>
     <?= implode('<br>', $errors);  ?>

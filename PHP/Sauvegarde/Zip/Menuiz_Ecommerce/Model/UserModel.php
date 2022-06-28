@@ -52,7 +52,8 @@ on USR.UTY_ID=UTY.UTY_ID
         ( USR_MAIL,
         USR_PASSWORD,
         USR_FIRSTNAME,
-        USR_LASTNAME,UTY_ID)
+        USR_LASTNAME,
+        UTY_ID)
          VALUES (
             :email,
             :mdp,

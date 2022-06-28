@@ -73,14 +73,26 @@ function isUserAdmin()
 function isUserVisitor()
 {
     return isUserConnected()
-        && $_SESSION['utilisateur']['role'] == 'Visitor';
+        && $_SESSION['utilisateur']['role'] == 'VISITOR';
+}
+
+function isUserHotline()
+{
+    return isUserConnected()
+        && $_SESSION['utilisateur']['role'] == 'TECHNICIEN HOTLINE';
+}
+
+function isUserSAV()
+{
+    return isUserConnected()
+        && $_SESSION['utilisateur']['role'] == 'TECHNICIEN SAV';
 }
 
 function adminSecurity()
 {
     if (!isuserAdmin() && !isUserVisitor()) {
         if (!isUserConnected()) {
-            header('location: ' . RACINE_WEB . 'connexion.php');
+            header('location:connexion.php');
         } else {
             header('HTTP/1.1 403 Forbidden');
             echo "Vous n'avez pas le droit d'acceder à cette page";

@@ -122,6 +122,31 @@
     <?php
     endif;
     ?>
+    <?php
+    if(isUserHotline()) :
+   ?>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <div class="container navbar-nav">
+                <a class="navbar-brand" href="#">SAV</a>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-recherche-dossier.php">
+                                Création Dossier
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#.php">
+                                Gestion Dossier
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <?php
+    endif;
+    ?>
     <nav class="navbar navbar-expand-md navbar-light " style="background-color: #e3f2fd;">
         <div class="container navbar-nav">
             <img class="logo headLogo" src="<?= IMG_WEB; ?>MenuizMan_logo.png" alt="logo">
@@ -156,20 +181,23 @@
                     <a class="nav-link" href="<?= RACINE_WEB; ?>panier.php">Panier</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= RACINE_WEB; ?>mescommandes.php">Mes Commandes</a>
+                </li>
+
                 <?php
     if (isUserVisitor()) :
     ?>
         
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= RACINE_WEB; ?>mescommandes.php">
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="layout/mescommandes.php">
                                 Mes Commandes
                             </a>
-                        </li>
+                        </li> -->
                        
     <?php
     endif;
     ?>
-
             </ul>
         </div>
     </nav>
@@ -177,3 +205,6 @@
         <?php
         displayFlashMessage();
         ?>
+    </div>
+
+    

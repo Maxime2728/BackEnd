@@ -108,10 +108,7 @@ endif;
     <div class="form-btn-group text-right">
         <button type="submit" class="btn btn-primary">Valider</button>
     </div>
-</form>
-<script>
-var test = '<?= 'test' ?>;
-</script>        
+</form>        
 <?php
 require __DIR__ .'/layout/bottom.php';
 ?>
