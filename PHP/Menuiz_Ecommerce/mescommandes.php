@@ -27,10 +27,24 @@ $commandes = $stmt->fetchAll();
 
 require __DIR__ . '/layout/top.php';
 ?>
-<h1>Commandes</h1>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 style="text-align: center">Commandes</h1>
+
+<div class="d-grid gap-2 col-2 mx-auto">
+    <a href="page-creation-dossier.php" class="btn btn-dark ">Ouvrir un ticket</a>
+</div>
 <!-- le tableau HTML ici -->
-<table class="table_cat th_produits table table-striped">
+<div class="d-grid gap-2 col-8 mx-auto">
+<table class="table_cat th_produits table table-striped table-dark ">
     <tr>
         <th>Numéro de commande</th>
         <th>Nom</th>
@@ -38,15 +52,9 @@ require __DIR__ . '/layout/top.php';
         <th>Date de commande</th>
         <th>Statut</th>
         <th></th>
-
-
     </tr>
-    <?php
 
-
-    foreach ($commandes as $commande) :
-     
-    ?>
+    <?php foreach ($commandes as $commande) :    ?>
         <tr>
             <td><?= $commande['OHR_NUMBER']; ?></td>
             <td><?= $commande['user_name']; ?></td>
@@ -55,16 +63,13 @@ require __DIR__ . '/layout/top.php';
 
             <td>
                 <?php
-
                 //faire une verif en BDD pour voir si l'id enregistré dans la commande correspond au libellé de la table statuts via son id
                 $stm = $pdo->query('select OSS_ID,OSS_WORDING from T_D_ORDERSTATUS_OSS where OSS_ID= ' . $commande['OSS_ID'] . ' ');
                 $commande_statut = $stm->fetchAll();
 
                 echo $commande_statut[0]['OSS_WORDING'];
                 ?>
-
             </td>
-
 
         </tr>
 
@@ -72,8 +77,15 @@ require __DIR__ . '/layout/top.php';
     endforeach;
     ?>
 </table>
+</div>
 
 
 <?php
 require __DIR__ . '/layout/bottom.php';
 ?>
+
+<script>
+
+</script>
+</body>
+</html>

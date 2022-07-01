@@ -79,7 +79,8 @@ if (!empty($_POST)) {
                     $_SESSION['adresseFac']['ville'],
                     $_SESSION['adresseFac']['pays'],
                     $_SESSION['adresseFac']['mail'],
-                    $_SESSION['adresseFac']['phone']
+                    $_SESSION['adresseFac']['phone'],
+                    $_SESSION['utilisateur']['id']
                 );
                 $bCreateAdrFac = true;
             }
@@ -100,7 +101,8 @@ if (!empty($_POST)) {
                         $_SESSION['adresseLiv']['ville'],
                         $_SESSION['adresseLiv']['pays'],
                         $_SESSION['adresseLiv']['mail'],
-                        $_SESSION['adresseLiv']['phone']
+                        $_SESSION['adresseLiv']['phone'],
+                        $_SESSION['utilisateur']['id']
                     );
                     $bCreateAdrLiv = true;
                 } else { // on est dans le cas où c'est la même adresse qui a été saisie pour création 2 fois....

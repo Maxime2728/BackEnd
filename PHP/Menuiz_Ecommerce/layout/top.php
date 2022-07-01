@@ -102,17 +102,22 @@
     ?>
         <nav class="navbar navbar-expand-md navbar-dark bg-primary">
             <div class="container navbar-nav">
-                <a class="navbar-brand" href="#">Admin</a>
+                <a class="navbar-brand" href="index.php">Admin</a>
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= RACINE_WEB; ?>admin/produits.php">
+                            <a class="nav-link" href="admin/produits.php">
                                 Gestion produits
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= RACINE_WEB; ?>admin/commande.php">
+                            <a class="nav-link" href="admin/commande.php">
                                 Gestion des commandes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="page-recherche-dossier.php">
+                                Recherche Dossier
                             </a>
                         </li>
                     </ul>
@@ -174,8 +179,8 @@
     ?>
     <nav class="navbar navbar-expand-md navbar-light " style="background-color: #e3f2fd;">
         <div class="container navbar-nav">
-            <img class="logo headLogo" src="<?= IMG_WEB; ?>MenuizMan_logo.png" alt="logo">
-            <a class="navbar-brand" href="<?= RACINE_WEB; ?>index.php">Boutique</a>
+            <img class="logo headLogo" src="MenuizMan_logo.png" alt="logo">
+            <a class="navbar-brand" href="index.php">Boutique</a>
 
             <ul class="navbar-nav">
                 <?php
@@ -187,27 +192,27 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= RACINE_WEB; ?>deconnexion.php">Deconnexion</a>
+                        <a class="nav-link" href="deconnexion.php">Deconnexion</a>
                     </li>
 
                 <?php
                 else :
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= RACINE_WEB; ?>inscription.php">Inscription</a>
+                        <a class="nav-link" href="inscription.php">Inscription</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= RACINE_WEB; ?>connexion.php">Connexion</a>
+                        <a class="nav-link" href="connexion.php">Connexion</a>
                     </li>
                 <?php
                 endif;
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= RACINE_WEB; ?>panier.php">Panier</a>
+                    <a class="nav-link" href="panier.php">Panier</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= RACINE_WEB; ?>mescommandes.php">Mes Commandes</a>
+                    <a class="nav-link" href="mescommandes.php">Mes Commandes</a>
                 </li>
 
                 <?php

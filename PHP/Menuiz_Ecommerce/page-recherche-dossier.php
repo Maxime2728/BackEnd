@@ -3,21 +3,24 @@
 include 'Model/ModelDossierSav.php';
 @$recherche = $_POST['chercher'];
 
-    $sqlwhere='';
+    $sqlwhere="2";
+    // Par Numéro de Commande
 if(isset($recherche)){
     if(!empty($_POST['numero'])){
        $sqlwhere+=" OHR_NUMBER='".$_POST['numero']."' ";
     }
 
+    // Par Numéro de Dossier
     if (!empty($_POST['numDossier'])){
         if (!empty($sqlwhere)){
             $sqlwhere+= " AND SAV_NUM_DOSSIER='".$_POST['numDossier']."'";
         }
         else{
-            $sqlwhere+= " SAV_NUM_DOSSIER='".$_POST['numDossier']."'";
+            $sqlwhere+= " SAV_NUM_DOSSIER='".(int)$_POST['numDossier']."'";
         }
     }
 
+    // Par Login Web (Email)
     if(!empty($_POST['logWeb'])){
         if(!empty($sqlwhere)){
             $sqlwhere+= " AND USR_MAIL='".$_POST['logWeb']."'";
@@ -27,6 +30,7 @@ if(isset($recherche)){
         }
     }
 
+    // Par Dénomination Client (Nom de famille)
     if(!empty($_POST['denClient'])){
         if(!empty($sqlwhere)){
             $sqlwhere+= " AND USR_LASTNAME='".$_POST['denClient']."'";
@@ -37,11 +41,12 @@ if(isset($recherche)){
     }
 }
     $modeleDossierSav = new ModelDossierSAV();
-    $dossierSav = $modeleDossierSav->AfficheDossierSAV($sqlwhere)->fetchAll();
+    $dossierSav = $modeleDossierSav->AfficheDossierSAV($sqlwhere);
 
 
 ?>
 
+    <!-- Code de Jonathan 28/06/2022 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,6 +70,7 @@ if(isset($recherche)){
     </style>
 </head>
 <body>
+    <!-- Fin du Code de Jonathan 28/06/2022 -->
 <?php
 
 require_once __DIR__ .'/Include/init.php';
@@ -102,9 +108,11 @@ require_once __DIR__ .'/layout/top.php';
         </form>
     </div>
     <!-- Code de Maxime le 29/06/2022 -->
+    <?php if(isset($recherche)):?>
     <div class="DossierFound">
-
-        <h1>Dossier SAV :</h1>
+        <div class="justify-self-center">
+            <h1 class="">Dossier SAV :</h1>
+        </div>
 
         <!-- le tableau HTML ici -->
         <table class="table_cat th_produits table table-striped">
@@ -152,6 +160,7 @@ require_once __DIR__ .'/layout/top.php';
             ?>
         </table>
     </div>
+    <?php endif ?>
     <!-- Fin Code de Maxime le 29/06/2022 -->
 </body>
 </html>

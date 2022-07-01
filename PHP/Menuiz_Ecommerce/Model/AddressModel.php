@@ -105,7 +105,7 @@ class ModeleAddress
     public function InsertAddress($firstname, $lastname,
      $line1, $line2,$line3,
      $zipcode,$city,$country,
-     $mail,$phone)
+     $mail,$phone, $usrid)
     {
         $this->connexion();
         $query = 'INSERT INTO T_D_ADDRESS_ADR
@@ -148,7 +148,22 @@ class ModeleAddress
         ]);
 
         // on retourne le dernier id
-        return $id = $this->idc->lastInsertId();
+        $id = $this->idc->lastInsertId();
+        $query = 'UPDATE T_D_USER_USR set ADR_ID=:addressID where USR_ID=:userID';
+        $stmt = $this->idc->prepare($query);
+        $stmt->execute([
+            ':addressID' => $id,
+            ':userID' => $usrid
+        ]);
+
+        // $query = 'update t_d_detailsav_dsv set ADR_ID=:adressID where USR_ID=:userID';
+        // $stmt = $this->idc->prepare($query);
+        // $stmt->execute([
+        //     ':adressID' => $id,
+        //     ':userID' => $id
+        // ]);
+
+        return $id;
     }
 
   

@@ -22,24 +22,55 @@ class ModelDossierSAV
     public function AfficheDossierSAV($sqlwhere)
     {
         $this->connexion();
-        $res = $this->idc->prepare("SELECT OHR.*, SAV.*, USR.USR_MAIL, 
-        USR.USR_LASTNAME 
-        FROM t_d_orderheader_ohr OHR left JOIN t_d_dossiersav_sav SAV
+        $res = $this->idc->prepare("SELECT OHR.*, SAV.*, USR.*, STY.*
+        FROM t_d_orderheader_ohr OHR LEFT JOIN t_d_dossiersav_sav SAV
          ON OHR.ohr_ID=SAV.ohr_ID 
-        INNER JOIN t_d_user_usr USR ON OHR.USR_ID=USR.USR_ID 
+        LEFT JOIN t_d_user_usr USR ON OHR.USR_ID=USR.USR_ID
+        LEFT JOIN t_d_savtype_sty STY ON SAV.STY_ID=STY.STY_ID
         WHERE '" .$sqlwhere ."';");
         $res->execute();
         return $res;
     }
 
-    public function Affiche($sqlwhere)
+    public function InsertDossierSav($lastname, $firstname, $numCommande, $email, $explication, $usrid)
     {
+
         $this->connexion();
-        $res = $this->idc->prepare("SELECT OHR.*, SAV.*, USR.USR_MAIL, USR.USR_LASTNAME 
-        FROM t_d_orderheader_ohr OHR left JOIN t_d_dossiersav_sav SAV ON OHR.ohr_ID=SAV.ohr_ID 
-        INNER JOIN t_d_user_usr USR ON OHR.USR_ID=USR.USR_ID WHERE '" .$sqlwhere ."';");
-        $res->execute();
-        return $res;
+        $query = 'INSERT INTO t_d_dossiersav_sav
+       (
+       SAV_NUM_DOSSIER,
+       STY_ID,
+       USR_ID,
+       OHR_NUMBER,
+       SAV_DESCRIPTION)
+       VALUES
+       (  
+            :savNumDoss,
+            :usrId,
+            :ohrNumber,
+            :savDesc
+        )';
+
+        $stmt = $this->idc->prepare($query);
+        $stmt->execute([
+            ':savNumDoss' =>$numCommande,
+            ':usrId' => $usrid,
+            ':ohrNumber' => $numCommande,
+            ':savDesc' => $explication
+        ]);
+
+       $id = $this->idc->lastInsertId();
+
+        // on met à jour l'ordernumber
+        // $query = 'update t_d_user_usr set OHR_NUMBER=:ordernumber where OHR_ID=:orderid';
+        // $stmt = $this->idc->prepare($query);
+        // $stmt->execute([
+        //     ':ordernumber' => 'ORDER' . $id,
+        //     ':orderid' => $id
+        // ]);
+
+        // on retourne le dernier id
+        return $id;
     }
 
 
