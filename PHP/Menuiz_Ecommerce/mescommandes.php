@@ -13,7 +13,7 @@
  * pour changer le statut de la commande en bdd (nécessité un champs caché pour l'id de la commande)
  */
 
-require_once __DIR__ . '/include/init.php';
+require_once __DIR__ . '/Include/init.php';
 adminSecurity();
 
 // concat_ws(' ', u.prenom, u.nom) //concatenation valeur sql
@@ -40,7 +40,7 @@ require __DIR__ . '/layout/top.php';
 <h1 style="text-align: center">Commandes</h1>
 
 <div class="d-grid gap-2 col-2 mx-auto">
-    <a href="page-creation-dossier.php" class="btn btn-dark ">Ouvrir un ticket</a>
+    <a href="<?= RACINE_WEB; ?>page-creation-dossier.php" class="btn btn-dark ">Ouvrir un ticket</a>
 </div>
 <!-- le tableau HTML ici -->
 <div class="d-grid gap-2 col-8 mx-auto">

@@ -22,12 +22,17 @@ class ModelDossierSAV
     public function AfficheDossierSAV($sqlwhere)
     {
         $this->connexion();
-        $res = $this->idc->prepare("SELECT OHR.*, SAV.*, USR.*, STY.*
-        FROM t_d_orderheader_ohr OHR LEFT JOIN t_d_dossiersav_sav SAV
-         ON OHR.ohr_ID=SAV.ohr_ID 
-        LEFT JOIN t_d_user_usr USR ON OHR.USR_ID=USR.USR_ID
-        LEFT JOIN t_d_savtype_sty STY ON SAV.STY_ID=STY.STY_ID
-        WHERE '" .$sqlwhere ."';");
+$sql="SELECT OHR.*, SAV.*, USR.*, STY.*
+FROM t_d_orderheader_ohr OHR LEFT JOIN t_d_dossiersav_sav SAV
+ ON OHR.OHR_ID=SAV.OHR_ID 
+LEFT JOIN t_d_user_usr USR ON OHR.USR_ID=USR.USR_ID
+LEFT JOIN t_d_savtype_sty STY ON SAV.STY_ID=STY.STY_ID";
+
+if (!empty($sqlwhere)){
+    $sql.=" WHERE " .$sqlwhere .";";
+}
+
+        $res = $this->idc->prepare($sql);
         $res->execute();
         return $res;
     }
@@ -46,6 +51,7 @@ class ModelDossierSAV
        VALUES
        (  
             :savNumDoss,
+            1,
             :usrId,
             :ohrNumber,
             :savDesc
@@ -54,6 +60,7 @@ class ModelDossierSAV
         $stmt = $this->idc->prepare($query);
         $stmt->execute([
             ':savNumDoss' =>$numCommande,
+            // ':styId' => $SavType,
             ':usrId' => $usrid,
             ':ohrNumber' => $numCommande,
             ':savDesc' => $explication
@@ -73,7 +80,14 @@ class ModelDossierSAV
         return $id;
     }
 
-
+    public function RecupTypeSav($sqlwhere)
+    {
+        $this->connexion();
+        $res = $this->idc->prepare("SELECT STY.*, SAV.* 
+        FROM t_d_savtype_sty STY;");
+        $res->execute();
+        return $res;
+    }
 
 }
 

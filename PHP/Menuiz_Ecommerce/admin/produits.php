@@ -10,7 +10,8 @@ adminSecurity();
 // lister les catégories dans un tableau HTML
 
 // le requêtage ici
-$stmt = $pdo->query('SELECT P.*,T.PTY_DESCRIPTION FROM T_D_PRODUCT_PRD P inner join  `t_d_producttype_pty`T ON P.PTY_ID=T.PTY_ID ');
+$stmt = $pdo->query('SELECT P.*,T.PTY_DESCRIPTION FROM T_D_PRODUCT_PRD P 
+inner join  `t_d_producttype_pty`T ON P.PTY_ID=T.PTY_ID ');
 $produit = $stmt->fetchAll();
 
 /*
@@ -53,7 +54,7 @@ require __DIR__ . '/../layout/top.php';
         
         <td>
             <a class="btn btn-primary"
-               href="<?= RACINE_WEB; ?>admin/produit-edit.php?id=<?= $item['PRD_ID']; ?>">
+               href="produit-edit.php?id=<?= $item['PRD_ID']; ?>">
                Modifier
             </a>
         <a class="btn btn-danger"

@@ -1,8 +1,9 @@
 <!-- Code de Maxime 30/06/2022 -->
 <?php
     
-include 'Model/ModelDossierSav.php';
-include 'Include/fonctions.php';
+require 'Model/ModelDossierSav.php';
+require_once __DIR__ . '/Include/init.php';
+
 
 @$createDoss = $_POST['createDoss'];
 @$lastname = $_POST['lastname'];
@@ -11,6 +12,7 @@ include 'Include/fonctions.php';
 @$email = $_POST['email'];
 @$explication = $_POST['explication'];
 @$usrid = $_SESSION['utilisateur']['id'];
+@$savType = $_SESSION['savType'];
 
 $prd_p = '';
 
@@ -19,6 +21,10 @@ if(isset($createDoss)){
     $createDossier = $createDossiers->InsertDossierSav($lastname, $firstname, 
     $numCommande, $email, $explication, $usrid);
 }
+
+// $typeSav = new ModelDossierSAV();
+// $sav = $typeSav->RecupTypeSav()->fetchAll();
+
     
 
 ?>
@@ -74,9 +80,9 @@ if(isset($createDoss)){
                 <input type="text" name="email" value="<?= $email; ?>">
             </div>
             
-            <div class="form-group">
-                <label>Selection du produit</label>
-                <select name="produit" class="form-control">
+            <!-- <div class="form-group">
+                <label>Selection du type de SAV</label>
+                <select name="savType" class="form-control">
                 <option value=""></option>
             <?php
             foreach ($products as $prd) :
@@ -89,7 +95,7 @@ if(isset($createDoss)){
             endforeach;
             ?>
                 </select>
-            </div>
+            </div> -->
             
             <div class="mb-3 ligne">
                 <label for="exampleFormControlTextarea1" class="form-label">Explication problème/Quel produit ?</label>

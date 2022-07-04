@@ -1,42 +1,53 @@
 <?php
 
-include 'Model/ModelDossierSav.php';
+require 'Model/ModelDossierSav.php';
+require 'Include/fonctions.php';
+
+// adminSecurity();
+
+// // concat_ws(' ', u.prenom, u.nom) //concatenation valeur sql
+// $query = 'SELECT C.*,U.USR_FIRSTNAME as user_name, U.USR_LASTNAME as user_prenom 
+// FROM T_D_ORDERHEADER_OHR C 
+// INNER JOIN T_D_USER_USR U ON C.USR_ID = U.USR_ID where U.USR_id= ' . $_SESSION['utilisateur']['id'];
+// $stmt = $pdo->query($query);
+// $commandes = $stmt->fetchAll();
+
 @$recherche = $_POST['chercher'];
 
-    $sqlwhere="2";
+    $sqlwhere='';
     // Par Numéro de Commande
 if(isset($recherche)){
     if(!empty($_POST['numero'])){
-       $sqlwhere+=" OHR_NUMBER='".$_POST['numero']."' ";
+       $sqlwhere.=" OHR_NUMBER='".$_POST['numero']."' ";
     }
 
     // Par Numéro de Dossier
     if (!empty($_POST['numDossier'])){
         if (!empty($sqlwhere)){
-            $sqlwhere+= " AND SAV_NUM_DOSSIER='".$_POST['numDossier']."'";
+            $sqlwhere .= " AND SAV_NUM_DOSSIER='".$_POST['numDossier']."'";
         }
         else{
-            $sqlwhere+= " SAV_NUM_DOSSIER='".(int)$_POST['numDossier']."'";
+            $sqlwhere .= " SAV_NUM_DOSSIER='".$_POST['numDossier']."'";
         }
     }
 
     // Par Login Web (Email)
     if(!empty($_POST['logWeb'])){
         if(!empty($sqlwhere)){
-            $sqlwhere+= " AND USR_MAIL='".$_POST['logWeb']."'";
+            $sqlwhere.= " AND USR_MAIL='".$_POST['logWeb']."'";
         }
         else{
-            $sqlwhere+= " USR_MAIL='".$_POST['logWeb']."'";
+            $sqlwhere.= " USR_MAIL='".$_POST['logWeb']."'";
         }
     }
 
     // Par Dénomination Client (Nom de famille)
     if(!empty($_POST['denClient'])){
         if(!empty($sqlwhere)){
-            $sqlwhere+= " AND USR_LASTNAME='".$_POST['denClient']."'";
+            $sqlwhere.= " AND USR_LASTNAME='".$_POST['denClient']."'";
         }
         else{
-            $sqlwhere+= " USR_LASTNAME='".$_POST['denClient']."'";
+            $sqlwhere.= " USR_LASTNAME='".$_POST['denClient']."'";
         }
     }
 }
@@ -102,8 +113,8 @@ require_once __DIR__ .'/layout/top.php';
         
          
             <div class="button">
-                <input class="btn" type="submit" name="chercher" value="Chercher"/>
-                <button class="btn" type="reset">RAZ</button>
+                <input class="btn btn-dark" type="submit" name="chercher" value="Chercher"/>
+                <button class="btn btn-dark" type="reset">RAZ</button>
             </div>
         </form>
     </div>
@@ -115,7 +126,7 @@ require_once __DIR__ .'/layout/top.php';
         </div>
 
         <!-- le tableau HTML ici -->
-        <table class="table_cat th_produits table table-striped">
+        <table class="table_cat th_produits table table-striped table-dark">
             <tr>
                 <th>N° Commande</th>
                 <th>Nom</th>
@@ -141,15 +152,7 @@ require_once __DIR__ .'/layout/top.php';
                     <td><?= datetimeFR($dossier['OHR_DATE']); ?></td>
 
                     <td>
-                        <?php
-
-                        //faire une verif en BDD pour voir si l'id enregistré dans la commande correspond au libellé de la table statuts via son id
-                        // $stm = $pdo->query('select OSS_ID,OSS_WORDING from T_D_ORDERSTATUS_OSS where OSS_ID= ' . $commande['OSS_ID'] . ' ');
-                        // $commande_statut = $stm->fetchAll();
-
-                        // echo $commande_statut[0]['OSS_WORDING'];
-                        ?>
-
+                        <a href="<?= RACINE_WEB; ?>detail-dossier-sav.php">Détails</a>
                     </td>
 
 

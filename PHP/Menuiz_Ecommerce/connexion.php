@@ -61,7 +61,7 @@ if (!empty($errors)) :
 ?>
 <style>
 form{
-    width: 400px !important;
+    width: 40% !important;
 }
 </style>
 <div class="alert alert-danger">
@@ -71,21 +71,28 @@ form{
 <?php
 endif;
 ?>
-       <h1>Connexion</h1>
-       
-       <form method="post">
-        <div class="form-group">
-        <label>Email</label>
-        <input type="text" name="email" class="form-control" value="<?= $email; ?>">
+        <h1>Connexion</h1>
+        <div class="offset-4">
+        <form method="post">
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label ">Email</label>
+                    <div class="col-sm">
+                        <input type="text" name="email" class="form-control col-sm-3" value="<?= $email; ?>">
+                    </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Mot de passe</label>
+                    <div class="col-sm">
+                        <input type="password" name="mdp" class="form-control col-sm-3">
+                    </div> 
+            </div>
+
+            <div class="form-btn-group">
+                <button type="submit" class="btn btn-primary">Valider</button>
+            </div>   
+        </form>
         </div>
-        <div class="form-group">
-        <label>Mot de passe</label>
-        <input type="password" name="mdp" class="form-control">
-        </div>  
-        <div class="form-btn-group text-right">
-        <button type="submit" class="btn btn-primary">Valider</button>
-        </div>   
-       </form>
 <?php
 require __DIR__ .'/layout/bottom.php';
 ?>

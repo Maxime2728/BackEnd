@@ -81,6 +81,8 @@ if (!empty($errors)) :
 endif;
 ?>
 
+
+
 <h1>Inscription</h1>
 <form method="post" class="inscrip_form">
    
