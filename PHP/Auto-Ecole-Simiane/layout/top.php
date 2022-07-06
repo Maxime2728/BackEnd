@@ -1,7 +1,3 @@
-<?php 
-require 'include/init.php';
-?>
-
 <!doctype html>
 <html lang="fr">
   <head>
@@ -17,23 +13,23 @@ require 'include/init.php';
   </head>
   <body>
 
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg bg-white">
   <div class="container-fluid">
-    <a class="navbar-brand position-relative top-50 start-0" href="<?= RACINE_WEB ?>index.php"><img src="images/logo-aes.png" alt="Logo"></a>
-    <h1 class="position-absolute top-50 start-50 translate-middle">Bienvenue<h1>
+    <a class="navbar-brand position-relative top-50 start-0 ms-2" href="index.php"><img src="images/logo-aes.png" alt="Logo"></a>
+    <h1 class="position-absolute top-50 start-50 translate-middle text-black"><h1>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-5">
         <li class="nav-item space">
-          <a class="btn btn-outline-dark" aria-current="page" href="<?= RACINE_WEB ?>index.php" >Accueil</a>
+          <a class="btn btn-outline-black text-black" aria-current="page" href="index.php" >Accueil</a>
         </li>
         <li class="nav-item space">
-          <a class="btn btn-outline-dark" href="<?= RACINE_WEB ?>prog-tarif.php">Programme et tarifs</a>
+          <a class="btn btn-outline-black text-black" href="prog-tarif.php">Programme et tarifs</a>
         </li>
         <li class="nav-item space">
-          <a class="btn btn-outline-dark" href="<?= RACINE_WEB ?>contact.php">Nous contacter</a>
+          <a class="btn btn-outline-black text-black" href="contact.php">Nous contacter</a>
         </li>
         <!-- <li class="nav-item space">
           <a class="btn btn-outline-dark" href="<?= RACINE_WEB ?>devis.php">Demande de devis</a>

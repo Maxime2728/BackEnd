@@ -7,8 +7,7 @@ define('RACINE_WEB', 'PHP/Auto-Ecole-Simiane/'); //ici mettez le nom du repertoi
 
 // define ('PHOTO_WEB', RACINE_WEB . 'photo/');
 define ('IMG_WEB', RACINE_WEB . 'images/');
-define( 'PHOTO_DEFAULT', 'https://dummyimage.com/600x400/cccccc/ffffff&text=Pas+d\'image'
-        );
+// define( 'PHOTO_DEFAULT', 'https://dummyimage.com/600x400/cccccc/ffffff&text=Pas+d\'image');
 
 // require_once __DIR__. '/cnx.php';
 // require_once __DIR__.'/fonctions.php';
