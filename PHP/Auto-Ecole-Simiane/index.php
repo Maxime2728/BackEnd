@@ -9,70 +9,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/all.css">
     <title>Accueil - Auto École Simiane</title>
+    <link rel="shortcut icon" href="images/icone-auto-ecole-simiane-blanc.jpg">
+
 </head>
 
 <body>
 
     <?php require 'layout/top.php'; ?>
 
+    <div class="section-picture">
+        <img src="images/aes-conduite-accompagnee-bande.png" alt="Pilon du Roy" width="100%">
+        <div class="container container-fixed">
+            <div class="col col-md-3 pilon">
+                <p class="pilon-text d-flex align-items-center">
+                    <img src="images/svg/camera.svg" alt="">
+                    Pilon du Roi
+                </p>
+            </div>
+            <div class="col col-md-3 ident-page">
+                <!-- <h3 class="text-pilon">Accueil</h3> -->
+            </div>
+        </div>
+    </div>
+
     <div class="page d-flex">
         <?php require 'layout/side-bar.php'; ?>
         <div class="center">
 
-            <div class="row g-0 bg-light position-relative">
-                <div class="col-md-6 p-3 ps-md-4">
-                    <h5 class="mt-0 titre">Apprenez à conduire</h5>
-                    <p>Forte de plusieurs années d’expérience, Auto Ecole Simiane est une entreprise familiale qui forme les conducteurs de demain. Si votre objectif est l’obtention du permis, on peut dire que vous êtes sur la bonne route !<br><br>
 
-                        Pour cela, nous mettons toute notre expérience et savoir-faire pour que votre apprentissage se fasse de manière ludique et enrichissante. Nous vous proposons des cours simples pour vous faire progresser rapidement et vous faire devenir un pro de la conduite!<br><br>
-                        Nos enseignants sont des professionnels diplômés et compétents, et sont à votre entière disposition tout au long de votre formation.<br><br>
-                        Notre méthode d’enseignement, avec des résultats certifiés, et notre flotte de voitures modernes vous attendent ! Nous nous engageons, avec professionnalisme et sérieux, à vous apprendre à conduire et à vous faire découvrir les plaisirs de la route !
-                    </p>
+            <!-- ------------ Caroussel ------------ -->
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
-                <div class="col-md-6 mb-md-0 p-md-4">
-                    <img src="images/peugeot-208-bleu.jpg" class="w-100" alt="Devanture auto-ecole">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="height:594px !important;" data-bs-interval="7000">
+                        <img src="images/conduite-tradi.jpg" class="d-block w-100" alt="Passez votre permis !">
+                        <div class="carousel-caption d-none d-md-block text-bg-black">
+                            <h5 class="titre-bleu">Passer votre permis à Simiane-Collongue</h5>
+                            <p>Avec une équipe à la fois professionnelle et sympathique, nous vous proposons une formation de qualité afin d’obtenir votre permis dans les meilleures conditions.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="height:594px !important;" data-bs-interval="7000">
+                        <img src="images/peugeot-208-bleu-2.jpg" class="d-block w-100" alt="Des véhicules modernes">
+                        <div class="carousel-caption d-none d-md-block text-bg-black">
+                            <h5 class="titre-red">Conduisez des voitures modernes</h5>
+                            <!-- Revoir la fin de la phrase !  -->
+                            <p>Nous vous proposons les derniers modèles de véhicules pour vos séances de conduites pour votre confort et pour que votre apprentissage se passe en toute sérénité.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" style="height:594px !important;" data-bs-interval="9000">
+                        <img src="images/heure-conduite.png" class="d-block w-100" alt="Auto Ecole Simiane">
+                        <div class="carousel-caption d-none d-md-block text-bg-black">
+                            <h5 class="titre-bleu">AUJOURD’HUI, LE PERMIS DE CONDUIRE EST LA CLÉ DE LA LIBÉRTÉ, INDISPENSABLE À L’INTÉGRATION SOCIALE ET PROFESSIONNELLE.</h5>
+                            <p>Obtenir son permis signifie avant tout d’avoir une bonne formation initiale. Cette formation est primordiale pour appréhender sereinement sa future vie d’automobiliste.</p>
+                        </div>
+                    </div>
                 </div>
+                <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon text-bg-black" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon text-bg-black" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-
+            <!-- ------------ Fin du Caroussel ------------ -->
             <br>
+            <!-- ------------ Texte ------------ -->
 
-            <div class="row g-0 bg-light position-relative">
-                <div class="col-md-6 mb-md-0 p-md-4">
-                    <img src="images/auto-ecole-simiane-devanture.jpg" class="w-100" alt="Devanture auto-ecole">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title titre-red text-center">Notre établissement vous propose de vous former dans les meilleures conditions.</h5>
+                    <br>
+                    <p class="card-text text-center">Tout d’abord par un suivi, pour la formation théorique, avec des cours et des tests de code. Ensuite par la pratique, en appliquant le Programme National de Formation: le <strong>REMC</strong> <em>(le Référentiel pour l’Éducation à la Mobilité Citoyenne)</em></p>
+                    <p class="card-text text-center titre-bleu">Quatre compétences sont requises :</p>
+
+                    <div class="head-card row justify-content-center">
+                        <div class="card me-2" style="width: 18rem;">
+                            <div class="card-body">
+                                <p class="card-text">1- Maîtriser le maniement du véhicule dans un trafic faible ou nul.</p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+
+                        <div class="card me-2" style="width: 18rem;">
+                            <div class="card-body">
+                                <p class="card-text">2- Appréhender la route et circuler dans des conditions normales.</p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+
+                        <div class="card me-2" style="width: 18rem;">
+                            <div class="card-body">
+                                <p class="card-text">3- Circuler dans des conditions difficiles et partager la route avec les autres usagers.</p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+
+                        <div class="card me-2" style="width: 18rem;">
+                            <div class="card-body">
+                                <p class="card-text">4- Pratiquer une conduite autonome, sûre et économique.</p>
+                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-md-6 p-4 ps-md-0">
-                    <h5 class="mt-0 titre">Préparation au code</h5>
-                    <p>Chez Auto Ecole Simiane, notre priorité est l’obtention de votre permis. Nous comprenons bien que réussir son permis est un pas important dans la vie et nous voulons vous guider dans cette étape.<br><br>
-
-                        Découvrez notre méthode d’enseignement fondée sur des cours clairs, faciles à retenir et conçus pour que l’examen du code ne soit pour vous qu’une formalité ! Avec nous, vous avez la garantie de cours ludiques préparés par des enseignants expérimentés et compétents, le tout dans une ambiance agréable. N’hésitez plus, Auto Ecole Simiane est un gage de réussite !<br><br>
-
-                        Nos cours sont soigneusement préparés pour qu’ils soient faciles à comprendre et à étudier. Notre équipe de professionnels se tient à tous moments à votre disposition pour répondre à vos questions et vous faire progresser vite et bien.</p>
-                </div>
+                <img src="images/Auto Ecole Simiane(Couverture Facebook).png" class="card-img-bottom" alt="...">
             </div>
-
-            <br>
-
-            <div class="row g-0 bg-light position-relative">
-
-                <div class="col-md-6 p-4 ps-md-4">
-                    <h5 class="mt-0 titre">L'apprentissage à petit prix !</h5>
-                    <p>Chez Auto Ecole Simiane, vous trouverez une forme apprentissage efficace, ludique et surtout économique. Nous avons optimisé chaque étape de l’enseignement et développé des outils pédagogiques pour vous aider à obtenir les meilleurs résultats.<br><br>
-
-                        Le haut pourcentage d’admis en est la meilleure preuve. Quel que soit pour le type de permis que vous voulez obtenir, avec Auto Ecole Simiane vous serez bien préparés !<br><br>
-
-                        Réussir son permis n’est pas forcément synonyme de grandes dépenses. Pour nous, la qualité prime toujours. C’est pourquoi notre équipe vous prépare dans les meilleures conditions afin d’éviter les répétitions et donc d’économiser votre argent.
-                    </p>
-                </div>
-                <div class="col-md-6 mb-md-0 p-md-4">
-                    <img src="images/peugeot_208_rouge.jpg" class="w-100" alt="Devanture auto-ecole">
-                </div>
-            </div>
-
         </div>
     </div>
 
+    
     <?php require 'layout/bottom.php'; ?>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="script/funtions.js"></script>
 </body>
 
 </html>

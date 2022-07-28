@@ -1,0 +1,49 @@
+.text{
+    text-align: center;
+}
+
+.centrer{
+    justify-items: center !important;
+    margin: 0;
+}
+
+/* ------------ Top ------------ */
+
+.space{
+    margin-left: 15px
+  }
+
+/* .active::after{
+    background-color: black;
+    color: white;
+} */
+
+.sidebar{
+    width: 300px;
+    margin-left: 10px;
+    margin-top: 30px;
+    border: 1px rgba(73, 73, 73, 0.3) solid;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9)
+  }
+
+/* ------------ Bottom ----------- */
+  .text-bot{
+    text-align: center;
+}
+
+.bot{
+    margin-top: 20px;
+    
+}
+
+/* .navbar-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
+} */
+
+.hidden{
+  visibility: hidden;
+}

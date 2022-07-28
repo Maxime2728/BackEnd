@@ -1,11 +1,46 @@
-.center{
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    padding: 20px;
+/* Pilon du roi bandeau */
+.section-picture{
+    position: relative;
+    text-align: center;
+    color: white !important;
+}
+
+.ident-page{
+    margin: 0;
+    padding: 0;
+    background-color: #4682A8;
+    width: 200px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: white 5px solid !important;
+    border-radius: 10px;
+    
+}.pilon{
+    margin: 0;
+    padding: 5px;
+    width: auto !important;
+    position: absolute;
+    top: 90%;
+    left: 92%;
+    transform: translate(-50%, -50%);
+    border-color: white 5px solid !important;
+    border-radius: 30px;
+    display: flex;
     color: black;
 }
+
+.pilon img{
+    margin-right: 5px;
+}
+
+.text-pilon{
+    font-size: 40px;
+}
+
+/* .......................................................................................... */
+
 
 .page{
     background-color: rgb(207, 207, 207);
@@ -15,6 +50,58 @@
     background: fixed;
 }
 
-.titre{
+.center{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 20px;
+    color: black;
+}
+
+
+.text-bg-black{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.titre-bleu{
+    color: #4682A8;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.titre-bleu-no-font{
     color: #4682A8;
 }
+
+.titre-red{
+    color: #AD262C;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.titre-red-no-font{
+    color: #AD262C;
+}
+
+.lien{
+    color: #AD262C;
+}
+
+.lien:hover{
+    color: #4682A8;
+}
+
+.btn-bleu{
+    background-color: #4682A8;
+    color: white;
+}
+
+.topbar-font{
+    font-size: 20px !important;
+}
+
+
+
+
