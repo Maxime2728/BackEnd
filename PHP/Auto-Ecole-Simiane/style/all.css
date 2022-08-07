@@ -3,6 +3,7 @@
     position: relative;
     text-align: center;
     color: white !important;
+    margin-top: 95px;
 }
 
 .ident-page{
@@ -22,8 +23,8 @@
     padding: 5px;
     width: auto !important;
     position: absolute;
-    top: 90%;
-    left: 92%;
+    top: 30%;
+    left: 5%;
     transform: translate(-50%, -50%);
     border-color: white 5px solid !important;
     border-radius: 30px;
@@ -43,11 +44,11 @@
 
 
 .page{
-    background-color: rgb(207, 207, 207);
-    background-image: url("../images/aes-route.jpg") !important;
-    background-size: 100%;
+    background-color: rgb(221, 221, 221);
+    /* background-image: url("../images/aes-route.jpg") !important; */
+    /* background-size: 100%;
     background-repeat: no-repeat;
-    background: fixed;
+    background: fixed; */
 }
 
 .center{
@@ -61,7 +62,7 @@
 
 
 .text-bg-black{
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 
@@ -102,6 +103,13 @@
     font-size: 20px !important;
 }
 
+.card-text{
+    font-weight: bold;
+}
+
+.bg-grey{
+    background-color: rgb(228, 228, 228) !important;
+}
 
 
 

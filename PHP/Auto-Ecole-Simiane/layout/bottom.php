@@ -16,6 +16,7 @@
         <div class="container d-flex text-bot bot ">
             <div class="row">
                 <h3 class="titre-bleu">Auto École Simiane</h3>
+                <p>Agrément : <strong>E1501300230</strong></p>
                 <p>27 rue Jacques Manera</p>
                 <p>13109 Simiane-Collongue</p>
             </div>

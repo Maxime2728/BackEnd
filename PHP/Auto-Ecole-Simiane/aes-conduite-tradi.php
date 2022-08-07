@@ -70,16 +70,16 @@
   <!-- Fin NavBar -->
 
   <div class="section-picture">
-    <img src="images/pillon-du-roy-3.jpg" alt="Pilon du Roy" width="100%" style="height:594px !important;">
+    <img src="images/aes-conduite-traditionelle.png" alt="Pilon du Roy" width="100%">
     <div class="container container-fixed">
       <div class="col col-md-3 pilon">
-        <p class="pilon-text d-flex align-items-center">
+        <!-- <p class="pilon-text d-flex align-items-center">
           <img src="images/svg/camera.svg" alt="">
           Pilon du Roi
-        </p>
+        </p> -->
       </div>
       <div class="col col-md-3 ident-page">
-        <h3 class="text-pilon">Conduite traditionnelle</h3>
+        <!-- <h3 class="text-pilon">Conduite traditionnelle</h3> -->
       </div>
     </div>
   </div>

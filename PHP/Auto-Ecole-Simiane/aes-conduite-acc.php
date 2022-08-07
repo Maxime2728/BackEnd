@@ -71,19 +71,19 @@
   <!-- Fin NavBar -->
 
   <div class="section-picture">
-    <img src="images/pillon-du-roy-3.jpg" alt="Pilon du Roy" width="100%" style="height:594px !important;">
-    <div class="container container-fixed">
-      <div class="col col-md-3 pilon">
-        <p class="pilon-text d-flex align-items-center">
-          <img src="images/svg/camera.svg" alt="">
-          Pilon du Roi
-        </p>
-      </div>
-      <div class="col col-md-3 ident-page">
-        <h3 class="text-pilon">Conduite Accompagnée</h3>
-      </div>
+        <img src="images/aes-conduite-accompagnee-bande-2.png" alt="Pilon du Roy" width="100%">
+        <div class="container container-fixed">
+            <div class="col col-md-3 pilon">
+                <!-- <p class="pilon-text d-flex align-items-center">
+                    <img src="images/svg/camera.svg" alt="">
+                    Pilon du Roi
+                </p> -->
+            </div>
+            <div class="col col-md-3 ident-page">
+                <!-- <h3 class="text-pilon">Accueil</h3> -->
+            </div>
+        </div>
     </div>
-  </div>
 
   <div class="d-flex center">
 

@@ -18,13 +18,14 @@
     <?php require 'layout/top.php'; ?>
 
     <div class="section-picture">
-        <img src="images/aes-conduite-accompagnee-bande.png" alt="Pilon du Roy" width="100%">
+        <img src="images/aes-acceuil-bande-2.png" alt="Pilon du Roy" width="100%">
         <div class="container container-fixed">
             <div class="col col-md-3 pilon">
-                <p class="pilon-text d-flex align-items-center">
-                    <img src="images/svg/camera.svg" alt="">
-                    Pilon du Roi
-                </p>
+            <!-- <video width="320" height="240" loop>
+                <source src="images/aes-reseaux-sociaux.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                Votre navigateur ne supporte pas ce type de Fichier.
+            </video> -->
             </div>
             <div class="col col-md-3 ident-page">
                 <!-- <h3 class="text-pilon">Accueil</h3> -->
@@ -85,41 +86,41 @@
                 <div class="card-body">
                     <h5 class="card-title titre-red text-center">Notre établissement vous propose de vous former dans les meilleures conditions.</h5>
                     <br>
-                    <p class="card-text text-center">Tout d’abord par un suivi, pour la formation théorique, avec des cours et des tests de code. Ensuite par la pratique, en appliquant le Programme National de Formation: le <strong>REMC</strong> <em>(le Référentiel pour l’Éducation à la Mobilité Citoyenne)</em></p>
+                    <p class="card-text text-center">Tout d’abord par un suivi, pour la formation théorique, avec des cours et des tests de code. Ensuite par la pratique, en appliquant le <strong>REMC</strong> <em>(le Référentiel pour l’Éducation à la Mobilité Citoyenne)</em></p>
                     <p class="card-text text-center titre-bleu">Quatre compétences sont requises :</p>
 
                     <div class="head-card row justify-content-center">
-                        <div class="card me-2" style="width: 18rem;">
+                        <div class="card me-2 bg-grey" style="width: 18rem; ">
                             <div class="card-body">
-                                <p class="card-text">1- Maîtriser le maniement du véhicule dans un trafic faible ou nul.</p>
+                                <p class="card-text text-black">1- Maîtriser le maniement du véhicule dans un trafic faible ou nul.</p>
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                         </div>
 
-                        <div class="card me-2" style="width: 18rem;">
+                        <div class="card me-2 bg-grey" style="width: 18rem;">
                             <div class="card-body">
-                                <p class="card-text">2- Appréhender la route et circuler dans des conditions normales.</p>
+                                <p class="card-text text-black">2- Appréhender la route et circuler dans des conditions normales.</p>
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                         </div>
 
-                        <div class="card me-2" style="width: 18rem;">
+                        <div class="card me-2 bg-grey" style="width: 18rem;">
                             <div class="card-body">
-                                <p class="card-text">3- Circuler dans des conditions difficiles et partager la route avec les autres usagers.</p>
+                                <p class="card-text text-black">3- Circuler dans des conditions difficiles et partager la route avec les autres usagers.</p>
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                         </div>
 
-                        <div class="card me-2" style="width: 18rem;">
+                        <div class="card me-2 bg-grey" style="width: 18rem;">
                             <div class="card-body">
-                                <p class="card-text">4- Pratiquer une conduite autonome, sûre et économique.</p>
+                                <p class="card-text text-black">4- Pratiquer une conduite autonome, sûre et économique.</p>
                                 <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <img src="images/Auto Ecole Simiane(Couverture Facebook).png" class="card-img-bottom" alt="...">
+                <!-- <img src="images/Auto Ecole Simiane(Couverture Facebook).png" class="card-img-bottom" alt="..."> -->
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@
   </head>
   <body>
 
-  <nav class="navbar navbar-expand-lg bg-light fixed-top" id="navBar">
+  <nav class="navbar navbar-expand-lg bg-white fixed-top" id="navBar">
   <div class="container-fluid">
     <a class="navbar-brand position-relative top-50 start-0 ms-2 bg-white" href="index.php"><img src="images/logo-aes.png" alt="Logo"></a>
     <h1 class="position-absolute top-50 start-50 translate-middle text-black"><h1>
@@ -47,7 +47,7 @@
           <a class="btn btn-outline-black text-black" href="prog-tarif.php" onclick="modifClassBtnProg()" id="prog">Programme et tarifs</a>
         </li> -->
         <li class="nav-item space">
-          <a class="btn btn-outline-black text-black topbar-font" href="contact.php" onclick="modifClassBtnContact()" id="contact">Nous contacter</a>
+          <a class="btn btn-outline-black text-black topbar-font" href="contact.php" onclick="modifClassBtnContact()" id="contact">Contactez-nous</a>
         </li>
         <!-- <li class="nav-item space">
           <a class="btn btn-outline-dark" href="<?= RACINE_WEB ?>devis.php">Demande de devis</a>
