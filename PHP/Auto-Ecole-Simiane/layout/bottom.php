@@ -12,7 +12,7 @@
 
 <body>
 
-    <div class="bottom bg-light">
+    <div class="bottom bg-white">
         <div class="container d-flex text-bot bot ">
             <div class="row">
                 <h3 class="titre-bleu">Auto École Simiane</h3>

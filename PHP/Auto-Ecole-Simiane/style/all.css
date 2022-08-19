@@ -1,45 +1,22 @@
-/* Pilon du roi bandeau */
+/* Bandeau */
 .section-picture{
     position: relative;
     text-align: center;
     color: white !important;
-    margin-top: 95px;
+    /* margin-top: 45px; */
 }
 
-.ident-page{
-    margin: 0;
-    padding: 0;
-    background-color: #4682A8;
-    width: 200px;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-color: white 5px solid !important;
-    border-radius: 10px;
-    
-}.pilon{
-    margin: 0;
-    padding: 5px;
-    width: auto !important;
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    transform: translate(-50%, -50%);
-    border-color: white 5px solid !important;
-    border-radius: 30px;
-    display: flex;
-    color: black;
+.mt-45{
+    margin-top: 45px;
 }
 
-.pilon img{
-    margin-right: 5px;
+.mt-90{
+    margin-top: 90px;
 }
 
-.text-pilon{
-    font-size: 40px;
+.mt-60{
+    margin-top: 60px;
 }
-
 /* .......................................................................................... */
 
 
@@ -65,25 +42,28 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.text-bleu{
+    font-size: 17px;
+}
 
 .titre-bleu{
-    color: #4682A8;
+    color: #2a7bad;
     font-weight: bold;
     font-size: 30px;
 }
 
 .titre-bleu-no-font{
-    color: #4682A8;
+    color: #2a7bad;
 }
 
 .titre-red{
-    color: #AD262C;
+    color: #ac1018;
     font-weight: bold;
     font-size: 30px;
 }
 
 .titre-red-no-font{
-    color: #AD262C;
+    color: #ac1018;
 }
 
 .lien{
@@ -100,7 +80,7 @@
 }
 
 .topbar-font{
-    font-size: 20px !important;
+    font-size: 21px !important;
 }
 
 .card-text{
@@ -109,6 +89,10 @@
 
 .bg-grey{
     background-color: rgb(228, 228, 228) !important;
+}
+
+.text-grey{
+    color: rgb(146, 146, 146);
 }
 
 
