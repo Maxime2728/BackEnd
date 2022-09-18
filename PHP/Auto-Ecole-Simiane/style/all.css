@@ -3,6 +3,8 @@
     position: relative;
     text-align: center;
     color: white !important;
+    background:url(images/acceuil-bande.png);
+    width: 100%;
     /* margin-top: 45px; */
 }
 
@@ -15,18 +17,22 @@
 }
 
 .mt-60{
-    margin-top: 60px;
+    margin: 0;
+    margin-top: 60px !important;
 }
 /* .......................................................................................... */
 
+body{
+    background-color: rgb(221, 221, 221) !important;
+}
 
-.page{
-    background-color: rgb(221, 221, 221);
+/* .page{
+    /* background-color: rgb(221, 221, 221); */
     /* background-image: url("../images/aes-route.jpg") !important; */
     /* background-size: 100%;
     background-repeat: no-repeat;
-    background: fixed; */
-}
+    background: fixed; 
+} */
 
 .center{
     width: 75%;
@@ -43,13 +49,17 @@
 }
 
 .text-bleu{
-    font-size: 17px;
+    /* font-size: 17px; */
+    color: #2a7bad;
+    font-style: normal;
+    font-weight: bolder;
 }
 
 .titre-bleu{
     color: #2a7bad;
     font-weight: bold;
     font-size: 30px;
+    font-style: normal;
 }
 
 .titre-bleu-no-font{
@@ -68,6 +78,10 @@
 
 .lien{
     color: #AD262C;
+}
+
+.text-red{
+    color: #cc131d;
 }
 
 .lien:hover{

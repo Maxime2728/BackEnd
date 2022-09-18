@@ -57,7 +57,7 @@ if(!empty($_POST)){
         $errors[] = 'Le mot de passe et sa confirmation ne sont pas identiques ';
     }
     
-if (empty($error)){
+if (empty($errors)){
 
 
         $userID=$userM->InsertUser($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['mdp']);

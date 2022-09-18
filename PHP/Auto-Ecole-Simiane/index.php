@@ -1,4 +1,7 @@
-<?php require 'include/init.php'; ?>
+<?php
+
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,15 +18,24 @@
 
 <body>
 
-    <!-- <?php require 'layout/top.php'; ?> -->
+    <?php require 'layout/top.php'; ?>
+    <br>
 
-    <div class="section-picture mt-60">
-        <img src="images/aes-acceuil-bande-2.png" alt="Pilon du Roy" width="100%">
+    <div class="container-fluid">
+        <div class="mt-60">
+            <img src="images/aes-acceuil-bande-2.png" alt="Pilon du Roy" width="100%">
+        </div>
+    </div>
+
+    <div class="container text-center mt-3 mb-1">
+        <?php
+        displayFlashMessage();
+        ?>
     </div>
 
     <div class="page d-flex">
         <?php require 'layout/side-bar.php'; ?>
-        <div class="center">
+        <div class="center container-fluid">
 
 
             <!-- ------------ Caroussel ------------ -->
@@ -37,7 +49,7 @@
                     <div class="carousel-item active" style="height:594px !important;" data-bs-interval="9000">
                         <img src="images/conduite-tradi.jpg" class="d-block w-100" alt="Passez votre permis !" style="height:594px !important;">
                         <div class="carousel-caption d-none d-md-block text-bg-black">
-                            <h5 class="titre-bleu">Passer votre permis à Simiane-Collongue</h5>
+                            <h5 class="titre-bleu">Passez votre permis à Simiane-Collongue</h5>
                             <p>Avec une équipe à la fois professionnelle et sympathique, nous vous proposons une formation de qualité afin d’obtenir votre permis dans les meilleures conditions.</p>
                         </div>
                     </div>
@@ -68,7 +80,7 @@
             </div>
             <!-- ------------ Fin du Caroussel ------------ -->
             <br>
-            <!-- ------------ Texte ------------ -->
+            <!-- ------------ Card text ------------ -->
 
             <div class="card">
                 <div class="card-body">
@@ -109,12 +121,18 @@
                     </div>
 
                 </div>
-                <!-- <img src="images/Auto Ecole Simiane(Couverture Facebook).png" class="card-img-bottom" alt="..."> -->
+                <div class="container-fluid">
+                    <img src="images/aes-resume.png" class="card-img-bottom" alt="..."><br>
+                    <div class="d-flex justify-content-center mt-3 mb-3">
+                        <a type="button" class="btn btn-danger me-2" id="tradi" href="aes-conduite-tradi.php"> Permis de conduire </a>
+                        <a type="button" class="btn btn-danger me-2" id="accompagne" href="aes-conduite-tradi.php"> Conduite accompagnée </a>
+                        <a type="button" class="btn btn-danger me-2" id="supervisee" href="aes-conduite-tradi.php"> Conduite supervisée </a>
+                        <a type="button" class="btn btn-danger me-2" id="code" href="aes-conduite-tradi.php"> Code de la route </a>
+                    </div>
+                </div>
             </div>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Documents à fournir pour l'inscription
-            </button>
+
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
