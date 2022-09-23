@@ -110,7 +110,7 @@ function panelAdminSecurity()
             header('Location:connexion.php');
         }
         if (isUserVisitor() && isUserConnected()) {
-            setFlashMessageDanger('Vous n\'avez pas le droit d\'acceder à cette page. Connectez-vous.');
+            setFlashMessageDanger('Vous n\'avez pas le droit d\'acceder à cette page.');
             header('Location:index.php');
             die;
         }
@@ -120,23 +120,6 @@ function panelAdminSecurity()
     }
 }
 
-// function adminSecurity()
-// {
-//     if (!isUserAdmin() || !isUserSuperAdmin()) {
-//         if (!isUserConnected()) {
-//             header('location:connexion.php');
-//         } else if (isUserVisitor() && isUserConnected()){
-//             header('HTTP/1.1 403 Forbidden');
-//             echo "Vous n'avez pas le droit d'acceder à cette page";
-//         }
-
-//         die;
-//     }
-//     else if(isUserAdmin() || isUserSuperAdmin() && isUserConnected()){
-//         header('location:panel-admin.php');
-//     }
-
-// }
 //region 'Panier'
 function prixFR($prix)
 {

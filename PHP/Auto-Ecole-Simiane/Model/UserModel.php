@@ -45,8 +45,8 @@ on USR.UTY_ID=UTY.UTY_ID
     public function RecupUserByMail($email)
     {
         $this->connexion();
-        $res = $this->idc->prepare("SELECT USR.*,UTY_LIBELLE  as 'role'  FROM T_D_USER_USR USR inner join T_D_USERTYPE_UTY UTY
-    on USR.UTY_ID=UTY.UTY_ID
+        $res = $this->idc->prepare("SELECT USR.*,UTY_LIBELLE as 'role',PRT_LIBELLE  as 'permis'  FROM T_D_USER_USR USR LEFT join T_D_USERTYPE_UTY UTY
+    on USR.UTY_ID=UTY.UTY_ID LEFT join t_d_permis_reussi_type_prt PRT on USR.PRT_ID=PRT.PRT_ID
      where USR_MAIL= '" . $email . "'");
         $res->execute();
         return $res;

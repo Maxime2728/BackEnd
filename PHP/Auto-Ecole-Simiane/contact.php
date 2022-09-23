@@ -5,12 +5,16 @@ session_start();
 $erreur = "";
 
 if (isset($valid)) {
+    $lastname = htmlspecialchars($_POST['nom']);
+    $firstname = htmlspecialchars($_POST['prenom']);
+    $email = strip_tags($_POST['email']);
+    $send = htmlspecialchars($_POST['message']);
     if (empty($lastname)) $erreur = "Le champs Nom est obligatoire !";
     elseif (empty($firstname)) $erreur = "Le champs Prénom est obligatoire !";
     elseif (empty($email)) $erreur = "Le champs Email est obligatoire !";
     elseif (empty($send)) $erreur = "Le champs Message est obligatoire !";
 
-    if (isset($_POST['send'])) {
+    if (isset($send)) {
         $entete  = 'MIME-Version: 1.0' . "\r\n";
         $entete .= 'Content-type: text/html; charset=utf-8' . "\r\n";
         $entete .= 'From: bizeaumaxime78@gmail.com' . "\r\n";
@@ -18,16 +22,17 @@ if (isset($valid)) {
 
         $message = '<h1>Message envoyé depuis la page Contact de Auto-Ecole-Simiane.fr</h1>
     <hr>
-    <p><b>Nom : </b>' . $_POST['nom'] . '<br>
-    <b>Prénom : </b>' . $_POST['prenom'] . '<br>
-    <b>Email : </b>' . $_POST['email'] . '<br>
+    <p><b>Nom : </b>' . $lastname . '<br>
+    <b>Prénom : </b>' . $firstname . '<br>
+    <b>Email : </b>' . $email . '<br>
     <b>Numéro de téléphone : </b>' . $_POST['tel'] . '<br>
     <hr>
-    <b>Message : </b>' . htmlspecialchars($_POST['message']) . '</p>';
+    <b>Message : </b>' . $send . '</p>';
 
         $retour = mail('bizeaumaxime78@gmail.com', 'Envoi depuis page Contact', $message, $entete);
         if ($retour)
-            header("Location: index.php");
+            setFlashMessage($_SESSION['utilisateur']['prenom'] . ', votre E-mail a bien été envoyé !');
+        header("Location: index.php");
         die();
     }
 }

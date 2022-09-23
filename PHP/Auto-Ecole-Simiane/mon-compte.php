@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 
@@ -15,8 +15,8 @@ session_start();
 </head>
 
 <body>
-<?php require 'layout/top.php'; ?>
-<br>
+    <?php require 'layout/top.php'; ?>
+    <br>
     <!-- Bandeau -->
     <div class="container-fluid">
         <div class="mt-60">
@@ -52,11 +52,22 @@ session_start();
         </div>
         <br>
 
-        <div class="container-fluid d-flex justify-content-center">
+        <div class="container-fluid d-flex justify-content-center w-75">
             <div class="mt-2 w-75 bg-light">
-                <p class="fs-5 ms-4"> <strong class="fw-bold">Nom :</strong> <?= $_SESSION['utilisateur']['nom']; ?></p> 
-                <button class="ms-4" onclick="">
+            <p class="fs-5 ms-4 text-sucess"> <strong class="fw-bold text-black"> Permis :</strong> <?= $_SESSION['utilisateur']['permis']; ?></p>
+            <br>
+                <p class="fs-5 ms-4"> <strong class="fw-bold">Nom :</strong> <?= $_SESSION['utilisateur']['nom']; ?></p>
                 <p class="fs-5 ms-4"> <strong class="fw-bold">Prénom :</strong> <?= $_SESSION['utilisateur']['prenom']; ?></p>
+                <br>
+                <p class="fs-5 ms-4"> <strong class="fw-bold">Adresse mail :</strong> <?= $_SESSION['utilisateur']['email']; ?></p>
+                <p class="fs-5 ms-4"> <strong class="fw-bold">Numéro de téléphone :</strong> 0<?= $_SESSION['utilisateur']['phone']; ?></p>
+                <br>
+                <p class="fs-5 ms-4"> <strong class="fw-bold"> Ville :</strong> <?= $_SESSION['utilisateur']['city']; ?></p>
+                <p class="fs-5 ms-4"> <strong class="fw-bold"> Code Postale :</strong> <?= $_SESSION['utilisateur']['zip']; ?></p>
+                <p class="fs-5 ms-4"> <strong class="fw-bold"> Adresse :</strong> <?= $_SESSION['utilisateur']['adresse']; ?></p>
+                <br>
+                <p class="fs-5 ms-4"> <strong class="fw-bold"> Rôle :</strong> <?= $_SESSION['utilisateur']['role']; ?></p>
+
             </div>
         </div>
 

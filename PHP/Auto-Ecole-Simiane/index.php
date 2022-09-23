@@ -19,11 +19,12 @@ session_start();
 <body>
 
     <?php require 'layout/top.php'; ?>
+
     <br>
 
     <div class="container-fluid">
         <div class="mt-60">
-            <img src="images/aes-acceuil-bande-2.png" alt="Pilon du Roy" width="100%">
+            <img src="images/aes-acceuil-bande-2.png" alt="" width="100%">
         </div>
     </div>
 
@@ -122,13 +123,18 @@ session_start();
 
                 </div>
                 <div class="container-fluid">
-                    <img src="images/aes-resume.png" class="card-img-bottom" alt="..."><br>
                     <div class="d-flex justify-content-center mt-3 mb-3">
                         <a type="button" class="btn btn-danger me-2" id="tradi" href="aes-conduite-tradi.php"> Permis de conduire </a>
                         <a type="button" class="btn btn-danger me-2" id="accompagne" href="aes-conduite-tradi.php"> Conduite accompagnée </a>
                         <a type="button" class="btn btn-danger me-2" id="supervisee" href="aes-conduite-tradi.php"> Conduite supervisée </a>
                         <a type="button" class="btn btn-danger me-2" id="code" href="aes-conduite-tradi.php"> Code de la route </a>
                     </div>
+                    <div class="d-flex justify-content-center mt-3 mb-3">
+                        <button type="button" class="btn btn-info me-2 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Document à fournir pour l'inscription
+                        </button>
+                    </div>
+                    <img src="images/aes-resume.png" class="card-img-bottom" alt="...">
                 </div>
             </div>
             <!-- Button trigger modal -->

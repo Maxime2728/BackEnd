@@ -28,7 +28,10 @@
             <div class="row">
                 <p>Copyright 2022</p>
                 <p>Auto École Simiane</p>
-                <p>Tous droits réservés | <a href="mentions-legal.php" class="lien">Mentions Légales</a>
+                <p>Tous droits réservés | 
+                    <a href="mentions-legal.php" class="lien">
+                        Mentions Légales
+                    </a>
                 <p>
             </div>
         </div>

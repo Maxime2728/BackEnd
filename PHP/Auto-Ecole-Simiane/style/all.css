@@ -1,13 +1,4 @@
 /* Bandeau */
-.section-picture{
-    position: relative;
-    text-align: center;
-    color: white !important;
-    background:url(images/acceuil-bande.png);
-    width: 100%;
-    /* margin-top: 45px; */
-}
-
 .mt-45{
     margin-top: 45px;
 }

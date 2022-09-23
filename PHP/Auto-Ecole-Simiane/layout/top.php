@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'include/fonctions.php';
 // require 'Model/UserModel.php';
 ?>
@@ -68,28 +68,38 @@ require_once 'include/fonctions.php';
                                 <ul class="dropdown-menu">
                                     <?php if (!isUserConnected()) :
                                     ?>
-                                        <li><a class="dropdown-item code topbar-font" href="mon-compte.php">Connexion / <br> Inscription</a></li>
+                                        <li>
+                                            <a class="dropdown-item code topbar-font" href="mon-compte.php">
+                                                Connexion / <br> Inscription
+                                            </a>
+                                        </li>
                                     <?php endif; ?>
                                     <?php if (isUserConnected()) :
                                     ?>
-                                        <!-- <li><p class="dropdown-item code topbar-font"><?php $prenom . ' ' . $nom; ?></p></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li> -->
-                                        <li><a class="dropdown-item code topbar-font" href="mon-compte.php">Gérer mon Compte</a></li>
+                                        <li><a class="dropdown-item code topbar-font" href="mon-compte.php">
+                                                Gérer mon Compte
+                                            </a>
+                                        </li>
 
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item code topbar-font" href="deconnexion.php">Déconnexion</a></li>
-
-                                        <li>
-                                            <hr class="dropdown-divider">
+                                        <li><a class="dropdown-item code topbar-font" href="deconnexion.php">
+                                                Déconnexion
+                                            </a>
                                         </li>
+
                                     <?php endif; ?>
-                                    <?php if (isUserAdmin() || isUserSuperAdmin() && isUserConnected() && panelAdminSecurity()) :
+                                    <?php if (isUserAdmin() || isUserSuperAdmin() && panelAdminSecurity()) :
                                     ?>
-                                        <li><a class="dropdown-item code topbar-font" href="admin/dashboard/pages/dashboard.php">Panel Administrateur</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item code topbar-font" href="admin/dashboard/pages/dashboard.php">
+                                                Panel Administrateur
+                                            </a>
+                                        </li>
                                     <?php endif; ?>
                                 </ul>
                             </div>
