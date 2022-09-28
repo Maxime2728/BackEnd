@@ -19,11 +19,12 @@ if (isset($_POST['validate'])) {
     extract($_POST);
     $email = htmlspecialchars($_POST['email']);
     $mdp = htmlspecialchars($_POST['mdp']);
+    sleep(1);
 
     if (empty($email)) {
         $errors[] = "L'email est obligatoire";
     }
-    if (empty($email)) {
+    if (empty($mdp)) {
         $errors[] = 'Le mot de passe est obligatoire';
     }
     if (empty($errors)) {
@@ -39,7 +40,6 @@ if (isset($_POST['validate'])) {
         // s'il ya un utilisateur en bdd avec l'email saisi
         if (!empty($utilisateur[0])) {
             $mdp_val = "mdp : " . sha1($mdp);
-
 
             if (sha1($mdp) == $utilisateur[0]['USR_PASSWORD']) {
 
