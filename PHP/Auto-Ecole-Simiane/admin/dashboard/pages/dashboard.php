@@ -59,7 +59,7 @@ $data = $userInscritCount->fetch();
 </head>
 <?php if(!isUserAdmin()|| !isUserSuperAdmin() && !isUserConnected()) : ?>
 <div class="d-flex justify-content-center mt-5">
-  <h1 class="text-primary">ERROR 404 : Impossible d'accéder à cette page...</h1>
+  <h1 class="text-primary">ERROR 403 : Impossible d'accéder à cette page...</h1>
 </div>
 <?php endif ?>
 <?php if (isUserAdmin() || isUserSuperAdmin() && panelAdminSecurity()) : ?>
